@@ -1,0 +1,12 @@
+---
+title: Frontend 101 Presentations
+
+description: A list of all the Frontend 101 presentations.
+---
+
+%h1 Frontend 101 Presentations
+%ol
+  - data.weeks.each do |week|
+    - if week.visible
+      %li
+        %a( href="#{week.slug}/" ) #{week.title} - #{week.focus}

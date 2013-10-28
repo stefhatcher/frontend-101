@@ -1,0 +1,34 @@
+-
+  title: Week 1
+  focus: The Internet + HTML
+  date: 10/21/2013
+  slug: week-1
+  visible: true
+
+-
+  title: Week 2
+  focus: The Basics of CSS + Layout
+  date: 10/28/2013
+  slug: week-2
+  visible: true
+
+-
+  title: Week 3
+  focus: Javascript + DOM
+  date: 11/04/2013
+  slug: week-3
+  visible: false
+
+-
+  title: Week 4 Part I
+  focus: Moar Javascript
+  date: 11/11/2013
+  slug: week-4-part-one
+  visible: false
+
+-
+  title: Week 4 Part II
+  focus: "Wrap-up + Above &amp; Beyond"
+  date: 11/08/2013
+  slug: week-4-part-two
+  visible: false

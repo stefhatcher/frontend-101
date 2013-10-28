@@ -1,0 +1,33 @@
+---
+title: Welcome to Frontend 101
+---
+
+%section#intro
+  .content
+    %h1 Welcome to Frontend 101!
+
+%section#presentations
+  .content
+    %h2 Presentations:
+    %ol
+      - data.weeks.each do |week|
+        - if week.visible
+          %li
+            %a( href="presentation/#{week.slug}/" ) #{week.title} - #{week.focus}
+
+%section#homeworks
+  .content
+    %h2 Homeworks:
+    %ol
+      - data.homework.each do |homework|
+        - if homework.visible
+          %li
+            %a( href="homework/#{homework.slug}/" ) #{homework.title}
+
+%section#resources
+  .content
+    %h2 Resources:
+    %ul
+      - data.resources.each do |resource|
+        %li
+          %a( href="#{resource.link}" target="_blank" ) #{resource.title}

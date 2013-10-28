@@ -1,0 +1,1986 @@
+---
+title: "Frontend 101 - Week 2"
+
+description: "A presentation on the basics of CSS and layout."
+---
+
+%section
+  %h1 Frontend 101
+  %h2
+    Week 2
+    %hr
+    #{data.weeks[1].focus}
+
+  %p.align--bottom w/ Stefanie Hatcher
+
+%section( style="background: url(../../images/html-css-handshake.svg) no-repeat 50% 50%; background-size: auto 80%;")
+
+%section
+  %h1
+    Cascading Style Sheets
+    %br
+    (CSS)
+
+  %p
+    %strong CSS
+    describes the appearance and layout of information on a web page.
+
+  %p
+    CSS can be embedded via a
+    %code &lt;style&gt;
+    in the
+    %code &lt;head&gt;
+    or placed into a separate
+    %code .css
+    file (preferred) and linked in the
+    in the
+    = succeed "." do
+      %code &lt;head&gt;
+
+  %p
+    %strong HTML
+    describes the content of the page.
+
+%section
+  %h1
+    %em Cascading
+    Style Sheets
+
+  %p
+    It's called Cascading Style Sheets because the propertied of an element
+    %a( href="http://m-w.com/dictionary/cascade" target="_blank" )
+      %em cascade
+    together in this order:
+
+    %ol
+      %li.fragment
+        browser's
+        %a( href="http://www.w3.org/TR/CSS2/sample.html" target="_blank" ) default styles
+        (
+        %a( href="http://meiert.com/en/blog/20070922/user-agent-style-sheets/" target="_blank" ) reference
+        )
+      %li.fragment
+        external style sheets files in order of appearance (in a
+        %code &lt;link&gt;
+        tag)
+      %li.fragment
+        internal style sheets (in a
+        %code &lt;style&gt;
+        tag in a page header)
+      %li.fragment
+        inline style (the
+        %code &lt;style&gt;
+        attribute of an HTML element)
+
+%section
+  %h1
+    Linking CSS:
+    %a( href="http://www.w3schools.com/tags/tag_link.asp" target="_blank" )
+      %code &lt;link&gt;
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        &lt;head&gt;
+          &lt;link href="style.css" type="text/css" rel="stylesheet"&gt;
+        &lt;/head&gt;
+
+  %p
+    The
+    %code &lt;link&gt;
+    tag defines the relationship between a document and an external source.
+
+  %p
+    The
+    %code &lt;link&gt;
+    element is an empty element, it contains attributes only. This element goes only in the head section, but it can appear any number of times.
+
+%section
+  %h1 CSS Rule Syntax
+
+  %p
+    Within a
+    %code .css
+    file:
+
+  %pre.pre--pseudo
+    %code
+      :preserve
+        selector {
+          property: value;
+          ...
+          property: value;
+        }
+
+  %pre
+    %code
+      :preserve
+        p {
+          font-family: monospace;
+          color: red;
+        }
+
+  %p
+    A CSS file consists of one or more
+    = succeed "." do
+      %strong rules
+
+  %p
+    A rule's
+    %strong selector
+    specifies HTML elements(s) and applies style
+    = succeed "." do
+      %strong properties
+
+%section
+  %section
+    %h2 CSS: colors
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            background-color: plum;
+            color: gold;
+          }
+
+    %p( style="background-color: plum; color: gold;" ) This paragraph uses the style above. Pretty.
+
+    / using a table makes sense for this content.
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/css/pr_text_color.asp" target="_blank" ) color
+          %td
+            color of the element's text
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/css/pr_background-color.asp" target="_blank" ) background-color
+          %td
+            color that will appear behind the element
+
+  %section
+    %h2 Specifying Colors
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            /* by color name */
+            color: red;
+          }
+
+          q {
+            /* by rgb or rgba values */
+            color: rgb(128, 0, 196);
+          }
+
+          em {
+            /* by hex */
+            color: #FF8800;
+          }
+
+
+    %pre.fragment
+      %code( data-trim="" )
+        :preserve
+          <p>
+            This paragraph uses the first style, but the
+            <q>inline quote uses the second style</q>
+            and then
+            <em>an emphasis uses the third style</em>.
+          </p>
+
+
+    %p.fragment( style="color: red;" )
+      This paragraph uses the first style, but the
+      %q( style="color: rgb(128, 0, 196);" ) inline quote uses the second style
+      and then
+      = succeed "." do
+        %em( style="color: #FF8800;" ) an emphasis uses the third style
+
+  %section
+    %h2
+      %a( href="http://www.w3schools.com/cssref/css_colornames.asp" target="_blank" ) Color Names
+
+    %p Referring to a color by name.
+
+    %p 140 color names are defined in the HTML and CSS color specification (17 standard colors plus 123 more).
+
+    %p
+      The 17 standard colors are:
+      = succeed ", " do
+        %span( style="color: aqua" ) aqua
+      = succeed ", " do
+        %span( style="color: black; background-color: white" ) black
+      = succeed ", " do
+        %span( style="color: blue" ) blue
+      = succeed ", " do
+        %span( style="color: fuchsia" ) fuchsia
+      = succeed ", " do
+        %span( style="color: gray" ) gray
+      = succeed ", " do
+        %span( style="color: green" ) green
+      = succeed ", " do
+        %span( style="color: lime" ) lime
+      = succeed ", " do
+        %span( style="color: maroon" ) maroon
+      = succeed ", " do
+        %span( style="color: navy" ) navy
+      = succeed ", " do
+        %span( style="color: olive" ) olive
+      = succeed ", " do
+        %span( style="color: orange" ) orange
+      = succeed ", " do
+        %span( style="color: purple" ) purple
+      = succeed ", " do
+        %span( style="color: red" ) red
+      = succeed ", " do
+        %span( style="color: silver" ) silver
+      = succeed ", " do
+        %span( style="color: teal" ) teal
+      = succeed ", " do
+        %span( style="color: white" ) white
+      and
+      = succeed "." do
+        %span( style="color: yellow" ) yellow
+
+  %section
+    %h2 RGB &amp; HEX Codes
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            background-color: rgba(128, 0, 196, 0.5);
+            /* #ffffff is a hex code for white */
+            color: #ffffff;
+          }
+
+    %p( style="background-color: rgba(128, 0, 196, 0.5); color: #ffffff;" )
+      = succeed ":" do
+        %strong rgb
+      red, green, and blue values from 0 (none) to 255 (full)
+
+    %p( style="background-color: rgba(128, 0, 196, 0.5); color: #ffffff;" )
+      %a( href="http://caniuse.com/rgba" target="_blank" )
+        %code rgba
+      is RGB with opacity as a fourth parameter.
+
+    %p( style="background-color: rgba(128, 0, 196, 0.5); color: #ffffff;" ) HEX codes: RGB values in base-16 from 00 (0, none) to FF (255, full)
+
+%section
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.theonion.com/content/node/28261" targt="_blank" ) fonts
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_font_font-family.asp" target="_blank" ) font-family
+          %td which font will be used
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_font_font-size.asp" target="_blank" ) font-size
+          %td how large the letters will be drawn
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_font_font-style.asp" target="_blank" ) font-style
+          %td used to enable/disable italic style
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank" ) font-weight
+          %td used to enable/disable bold style
+        %tr
+          %td.text--center( colspan="2" )
+            %a( href="http://www.w3schools.com/css/css_font.asp" target="_blank" ) More about fonts
+
+  %section
+    %h2
+      %a( href="http://www.w3schools.com/cssref/pr_font_font-family.asp" target="_blank" )
+        %code font-family
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            font-family: "Comic Sans", Helvetica, sans-serif;
+          }
+
+          code {
+            font-family: "Courier New";
+          }
+
+    %p( style="font-family: 'Comic Sans';" ) This paragraph uses the first style above...
+    %p
+      The
+      %code code element
+      in this paragraph uses the second style above.
+
+    %hr
+
+    %p Enclose multi-word font names in quotes. Can specify multiple fonts from highest to lowest priority.
+
+    %p
+      %strong Generic font names:
+      = succeed ", " do
+        %span( style="font-family: serif;" ) serif
+      = succeed ", " do
+        %span( style="font-family: sans-serif;" ) sans-serif
+      = succeed ", " do
+        %span( style="font-family: cursive;" ) cursive
+      = succeed ", " do
+        %span( style="font-family: fantasy;" ) fantasy
+      = succeed "." do
+        %span( style="font-family: monospace;" ) monospace
+
+  %section
+    %h2
+      %a( href="http://www.w3schools.com/cssref/pr_font_font-size.asp" target="_blank" )
+        %code font-size
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            font-size: 14pt;
+          }
+
+    %p( style="font-size: 14pt;" ) This paragraph uses the style above.
+    %hr
+    %p
+      %a( href="http://www.w3schools.com/cssref/css_units.asp" target="_blank" )
+        units: pixels (
+        %code px
+        ) vs. point (
+        %code pt
+        ) vs. m-size (
+        %code em
+        )
+      %br
+      = succeed ", " do
+        %code( style="font-size: 16px;" ) 16px
+      = succeed ", " do
+        %code( style="font-size: 16pt;" ) 16pt
+      %code( style="font-size: 1.16em;" ) 1.16em
+
+    %p
+      Vauge font sizes:
+      = succeed ", " do
+        %code( style="font-size: xx-small;" ) xx-small
+      = succeed ", " do
+        %code( style="font-size: x-small;" ) x-small
+      = succeed ", " do
+        %code( style="font-size: small;" ) small
+      = succeed ", " do
+        %code( style="font-size: medium;" ) medium
+      = succeed ", " do
+        %code( style="font-size: large;" ) large
+      = succeed ", " do
+        %code( style="font-size: x-large;" ) x-large
+      = succeed ", " do
+        %code( style="font-size: xx-large;" ) xx-large
+      = succeed ", " do
+        %code( style="font-size: smaller;" ) smaller
+      %code( style="font-size: larger;" ) larger
+
+    %p
+      Percentage font sizes, e.g.:
+      = succeed ", " do
+        %code( style="font-size: 90%;" ) 90%
+      %code( style="font-size: 120%" ) 120%
+
+  %section
+    %h2
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank" )
+          %code font-weight
+      %a( href="http://www.w3schools.com/cssref/pr_font_font-style.asp" target="_blank" )
+        %code font-style
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            font-style: italic;
+            font-weight: bold;
+          }
+
+    %p( style="font-style: italic; font-weight: bold;" ) This paragraph uses the style above.
+    %hr
+
+    %p
+      Either of the above can be set to
+      %code normal
+      to turn them off (e.g. for headings or blockquotes)
+
+%section
+  %h1 Grouping Styles
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        p, em {
+          color: gold;
+        }
+
+        em {
+          background-color: green;
+        }
+
+  %p( style="color: gold;" )
+    This paragraph uses the above style and so does this
+    = succeed "." do
+      %em( style="color: gold; background-color: green;" ) emphasis
+  %hr
+
+  %p
+    A style can select multiple elements separated by commas.
+  %p
+    The individual elements can also have their own styles (like
+    %code em
+    above).
+
+%section
+  %h2 CSS: Comments
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        /* This is a comment.
+           It can span many lines in the CSS file. */
+        p {
+          color: red;
+        }
+
+  %p CSS (like HTML) is usually not commented as much as code like Javascript.
+  %p
+    The
+    %code //
+    single-line comment style is NOT supported in CSS.
+  %p
+    The
+    %code &lt;!-- ... -->
+    HTML comment style is also NOT supported in CSS.
+
+%section
+  %h2 CSS: text
+
+  %table
+    %tbody
+      %tr
+        %th property
+        %th description
+      %tr
+        %td
+          %a( href="http://www.w3schools.com/cssref/pr_text_text-align.asp" target="_blank" )
+            %code text-align
+        %td
+          alignment of text within its element:
+          = succeed ", " do
+            %code left
+          = succeed ", " do
+            %code right
+          = succeed ", " do
+            %code center
+          or
+          %code justify
+      %tr
+        %td
+          %a( href="http://www.w3schools.com/cssref/pr_text_text-decoration.asp" target="_blank" )
+            %code text-decoration
+        %td
+          decorations such as
+          = succeed ", " do
+            %code( style="text-decoration: overline;" ) overline
+          = succeed ", " do
+            %code( style="text-decoration: underline;" ) underline
+          = succeed ", " do
+            %code( style="text-decoration: line-through;" ) line-through
+          = succeed ", " do
+            %code( style="text-decoration: blink;" ) blink
+          or
+          %code( style="text-decoration: none;" ) none
+      %tr
+        %td
+          %a( href="http://www.w3schools.com/cssref/pr_text_text-indent.asp" target="_blank" )
+            %code text-indent
+        %td indents the first letter of each paragraph
+      %tr
+        %td
+          %a( href="http://www.w3schools.com/cssref/css3_pr_text-shadow.asp" target="_blank" )
+            %code text-shadow
+        %td a colored shadow near an existing piece of text
+      %tr
+        %td
+          = succeed ", " do
+            %a( href="http://www.w3schools.com/cssref/pr_dim_line-height.asp" target="_blank" )
+              %code line-height
+          = succeed ", " do
+            %a( href="http://www.w3schools.com/cssref/pr_text_word-spacing.asp" target="_blank" )
+              %code word-spacing
+          %a( href="http://www.w3schools.com/cssref/pr_text_letter-spacing.asp" target="_blank" )
+            %code letter-spacing
+        %td gaps between the various portions of the text
+      %tr
+        %td.text--center( colspan="2" )
+          %a( href="http://www.w3schools.com/css/css_text.asp" target="_blank" ) Complete list of text properties
+
+%section
+  %h2
+    %a( href="http://www.w3schools.com/cssref/pr_list-style-type.asp" target="_blank" )
+      %code list-style-type
+    property
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        ol {
+          list-style-type: lower-roman;
+        }
+
+  %ul( style="list-style-type: circle;" )
+    %li
+      Possible values:
+      %ol( style="list-style-type: lower-roman;" )
+        %li
+          = succeed ": " do
+            %code none
+          No marker
+        %li
+          %code disc
+          (default),
+          = succeed ", " do
+            %code circle
+          %code square
+        %li
+          = succeed ": " do
+            %code decimal-leading-zero
+          01, 02, 03, etc.
+        %li
+          = succeed ": " do
+            %code lower-roman
+          i, ii, iii, iv, v, etc.
+        %li
+          = succeed ": " do
+            %code upper-roman
+          I, II, III, IV, V, etc.
+
+        %li
+          = succeed ": " do
+            %code lower-alpha
+          a, b, c, d, e, etc.
+
+        %li
+          = succeed ": " do
+            %code upper-alpha
+          A, B, C, D, E, etc.
+
+        %li
+          = succeed ": " do
+            %code lower-greek
+          alpha, beta, gamma, etc.
+
+        %li
+          others:
+          = succeed ", " do
+            %code hebrew
+          = succeed ", " do
+            %code armenian
+          = succeed ", " do
+            %code georgian
+          = succeed ", " do
+            %code cjk-ideographic
+          = succeed ", " do
+            %code hiragana
+          = succeed ", " do
+            %code katakana
+          = succeed ", " do
+            %code hiragana-iroha
+          %code katakana-iroha
+
+%section
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.w3schools.com/css/css_background.asp" target="_blank" ) backgrounds
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_background-color.asp" target="_blank" )
+              %code background-color
+          %td color to fill background; fills the element's content area
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_background-image.asp" target="_blank" )
+              %code background-image
+          %td image to place in background; fills the element's content area
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_background-position.asp" target="_blank" )
+              %code background-position
+          %td placement of bg image within element
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_background-repeat.asp" target="_blank" )
+              %code background-repeat
+          %td
+            whether/how bg image should be repeated
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_background-attachment.asp" target="_blank" )
+              %code background-attachment
+          %td whether bg image scrolls with page
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_background.asp" target="_blank" )
+              %code background
+          %td shorthand to set all background properties
+
+  %section( style="background-color: rgba(0, 0, 0, 0.65);" data-background="http://placekitten.com/g/200/200" data-background-repeat="repeat" data-background-size="200px" data-background-transition="slide" )
+    %h2
+      %a( href="http://www.w3schools.com/cssref/pr_background-image.asp" target="_blank" )
+        %code background-image
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          section {
+            background-image: url("http://placekitten.com/g/200/200");
+          }
+    %p
+      The styles above are applied to this
+      = succeed "." do
+        %code section
+    %hr
+    %p Background image/color fills the element's content area.
+
+  %section( style="background-color: rgba(0, 0, 0, 0.65);" data-background="http://placekitten.com/g/200/200" data-background-repeat="repeat-x" data-background-size="200px" data-background-transition="slide" )
+    %h2
+      %a( href="http://www.w3schools.com/cssref/pr_background-repeat.asp" target="_blank" )
+        %code background-repeat
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          section {
+            background-image: url("http://placekitten.com/g/200/200");
+            background-repeat: repeat-x;
+          }
+    %p
+      The styles above are applied to this
+      = succeed "." do
+        %code section
+    %hr
+    %p
+      %code background-repeat
+      can be
+      %code repeat
+      (default),
+      = succeed ", " do
+        %code repeat-x
+      = succeed ", " do
+        %code repeat-y
+      or
+      %code no-repeat
+
+  %section( data-background="http://placekitten.com/g/200/200" data-background-repeat="no-repeat" data-background-size="200px" data-background-position="center top" data-background-transition="slide" )
+    %h2
+      %a( href="http://www.w3schools.com/cssref/pr_background-position.asp" target="_blank" )
+        %code background-position
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          section {
+            background-image: url("http://placekitten.com/g/200/200");
+            background-repeat: no-repeat;
+            background-position: center top;
+          }
+    %p
+      The styles above are applied to this
+      = succeed "." do
+        %code section
+    %hr
+    %p
+      %code background-position
+      value consists of two tokens.
+    %p
+      The first relates to the x-axis (horizontal) positioning.
+      The second relates to the y-axis (vertical) positioning.
+    %p
+      Each of which can be a percentage, a length value in
+      = succeed ", " do
+        %code px
+      = succeed ", " do
+        %code pt
+      etc, or a position name:
+      = succeed "/" do
+        %code left
+      = succeed "/" do
+        %code right
+      %code center
+      or
+      = succeed "/" do
+        %code top
+      = succeed "/" do
+        %code bottom
+      = succeed "." do
+        %code center
+
+%section
+  %h2
+    CSS:
+    %a( href="http://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank" ) pseudo-classes
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        a { color: #e7ad52; }
+        a:hover { color: #f3d7ac; }
+
+  %table
+    %tbody
+      %tr
+        %th class
+        %th description
+      %tr
+        %td
+          %code :active
+        %td an activated or selected element
+      %tr
+        %td
+          %code :focus
+        %td an element that has the keyboard focus
+      %tr
+        %td
+          %code :hover
+        %td an element that has the mouse over it
+      %tr
+        %td
+          %code :link
+        %td a link that has not been visited
+      %tr
+        %td
+          %code :visited
+        %td a link that has already been visited
+      %tr
+        %td
+          %code :first-letter
+        %td the first letter of text inside an element
+      %tr
+        %td
+          %code :first-line
+        %td the first line of text inside an element
+      %tr
+        %td
+          %code :first-child
+        %td an element that is the first one to appear inside another
+      %tr
+        %td
+          %code :nth-child(N)
+        %td
+          applies to every Nth child of a given parent
+          (
+          %a( href="http://css-tricks.com/how-nth-child-works/" target="_blank" ) CSS-Tricks
+          )
+
+
+%section
+  %h1 Body Styles
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        body {
+          font-size: 16px;
+        }
+
+  %p
+    To apply a style to the entire body of your page, write a selector for the
+    %code body
+    element.
+
+  %p This saves you from manually applying a style to each element.
+
+%section
+  %h1 Conflicting Styles
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        p, h1, em { color: gold; text-decoration: underline; }
+        em { background-color: purple; color: red; }
+
+  %p( style="color: gold; text-decoration: underline;" )
+    This paragraph uses the first style, but the
+    %em( style="color: gold; font-weight: bold; background-color: purple; color: red;" )
+      emphasis uses both styles but overrides
+      %code color
+    because of grouping and order.
+
+  %hr
+
+  %p If you define a style property, and later define an alternative style property for the same thing, the later definition over-rules the earlier one.
+
+%section
+  %h1
+    %a( href="http://www.webdesignfromscratch.com/html-css/css-inheritance-cascade/" target="_blank" ) Inheriting Styles
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        body { font-family: sans-serif; background-color: plum; }
+        p { color: red; background-color: green; margin: 0; }
+        a { text-decoration: overline underline; }
+        ul { font-weight: bold; text-align: center; }
+
+  %div( style="font-family: sans-serif; background-color: plum; margin-bottom: 1em;" )
+    %p( style="color: red; background-color: green; margin: 0;" )
+      A styled paragraph. A
+      %a( href="#"  style="text-decoration: overline underline;" ) link
+      to nowhere.
+    %ul( style="font-weight: bold; text-align: center;" )
+      %li A bulleted list.
+
+  %hr
+
+  %p
+    When multiple styles apply to an element, they are
+    = succeed "--" do
+      %a( href="http://coding.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/" target="_blank" )
+        %strong inherited
+    a way of propagating property values from parent elements to their children.
+
+  %p A more tightly matching rule can override a more general inherited rule (notice the link's color).
+
+  %p
+    Not all properties are inherited, but you can force ones to be by using the
+    %code inherit
+    value.
+
+%section
+  %h1 Embedding Style Sheets (BAD)
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        &lt;head&gt;
+          &lt;style type="text/css"&gt;
+            p { color: red; font-family: sans-serif; }
+            h2 { background-color: yellow; }
+          &lt;/style&gt;
+        &lt;/head&gt;
+
+  %p
+    CSS code can be embedded within the
+    %code head
+    of an HTML page using the
+    %a( href="http://www.w3schools.com/tags/tag_style.asp" target="_blank" )
+      %code &lt;style&gt;
+    tag.
+
+  %p
+    This is considered
+    = succeed "; " do
+      %em bad style
+    DO NOT DO THIS (why?)
+
+  %p.fragment
+    Answer: Content and presentation should be separate.
+
+%section
+  %h1 Inline Styles (BAD)
+
+  %pre
+    %code( data-trim="" )
+      :preserve
+        <p style="font-family: sans-serif; color: red;">
+          This is a paragraph with inline styles.
+        </p>
+
+  %p Inline styles have higher precedence than embedded or linked styles.
+  %p Should be used for one-time overrides and styling a particular element.
+  %p
+    But this is
+    = succeed "; " do
+      %em bad style
+    DO NOT DO THIS (why?)
+
+  %p.fragment
+    Answer: Content and presentation should be separate.
+
+%section
+  %h1 Content vs. Presentation
+
+  %p.fragment
+    HTML is for
+    = succeed "; " do
+      %strong content
+    %em what
+    is on the page (heading; list; code; etc.)
+
+  %p.fragment
+    CSS is for
+    = succeed "; " do
+      %strong presentation
+    %em how
+    to display the page (bold; centered; 20px margin; etc.)
+
+  %p.fragment Keeping content separate from presentation is a very important web development principle.
+
+  %p.fragment
+    If the HTML contains no styles, its entire appearance can be changed by swapping
+    %code .css
+    files. Checkout
+    = succeed "." do
+      %a( href="http://csszengarden.com/" target="_blank" ) CSS Zen Garden
+
+%section
+  %section( style="background: url(../../images/html-css-handshake.svg) no-repeat 50% 50%; background-size: auto 80%;")
+
+  %section
+    %h1 Styling page sections
+
+    %p
+      We can
+      %strong style individual elements, groups of elements, sections of text
+      or the entire page through markup grouping.
+
+    %p Why? So we can create (complex) page layouts.
+
+  %section
+    %h1
+      The HTML
+      %code id
+      attribute
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p>Welcome to this slide!</p>
+          <p id="mission">
+            We on a mission to break the content up into page sections!
+          </p>
+
+    %p.fragment
+      Allows you to give a unique ID to any element on a page.
+
+    %p.fragment
+      Each ID must be unique; it can only be used once in the entire page.
+
+  %section
+    %h1 Linking to section of a web page
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p>
+            Visit
+            <a href="http://www.sublimetext.com/2#download">sublimetext.com</a>
+            to get the Sublime Text 2 editor.
+          </p>
+          <p><a href="#mission">View our Mission Statement.</a></p>
+
+    %p.fragment
+      A link target can include an ID at the end, preceded by a
+      = succeed "." do
+        %code #
+
+    %p.fragment The browser will load that page and scroll to the element with the given ID.
+
+  %section
+    %h2 CSS ID selectors
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p>Welcome to this slide!</p>
+          <p id="mission">
+            We on a mission to break the content up into page sections!
+          </p>
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          #mission {
+            font-style: italic;
+            font-family: cursive;
+          }
+
+    %p Welcome to this slide!
+    %p#mission( style="font-styel: italic; font-family: cursive;" ) We on a mission to break the content up into page sections!
+
+    %hr
+
+    %p
+      The CSS ID selector applies style only to the paragraph that has the ID of
+      = succeed "." do
+        %code missions
+      The element can be specificed explicitly:
+      %code
+        = succeed "#mission" do
+          %strong p
+
+  %section
+    %h1
+      The HTML
+      %code class
+      attribute
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p class="shout">Hi! Hi! Hi!</p>
+          <p class="error">You didn't say "Hi" back.</p>
+          <p class="special">But you're still special.</p>
+          <p class="special really-special">...Really special.</p>
+
+    %p
+      Classes are a way to group some elements and give a style to only that group. ("I don't want ALL paragraphs to be special, just these ones.")
+
+    %p
+      Unlike an
+      = succeed ", " do
+        %code id
+      a
+      %code class
+      can be nested as much as you like on the page.
+
+    %p
+      You can also have multiple classes per element.
+      %br
+      (e.g. "
+      %code special really-special
+      ")
+
+
+  %section
+    %h2 CSS class selectors
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          /* any element with class="special" */
+          .special {
+            color: plum;
+            font-family: cursive;
+          }
+
+          /* only p elements with class="error" */
+          p.error {
+            background-color: red;
+          }
+
+    %p.shout Hi! Hi! Hi!
+    %p.error You didn't say "Hi" back.
+    %p.special But you're still special.
+
+  %section
+    %h1 Multiple classes
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p class="error special">ERROR! Special!</p>
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          /* any element with class="special" */
+          .special {
+            color: plum;
+            font-family: cursive;
+          }
+
+          /* only p elements with class="error" */
+          p.error {
+            background-color: red;
+          }
+
+    %p.error.special ERROR! Special!
+
+    %hr
+
+    %p An element can be a member of multiple classes (separated by spaces).
+
+  %section
+    %h1
+      Sections of a page:
+      %a( href="http://www.w3schools.com/tags/tag_div.asp" target="_blank" )
+        %code &lt;div&gt;
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <div class="side-note">
+            <p>
+              I'm just coding to say,
+              <q class="special">I love you</q>.
+            </p>
+          </div>
+
+    .side-note
+      %p
+        I'm just coding to say,
+        = succeed "." do
+          %q.special I love you
+
+    %hr
+
+    %p A tag used to indicate a logical section or area of a page (block element).
+    %p It has no appearance by default, but you can apply styles to it.
+
+  %section
+    %h1
+      Inline sections:
+      %a( href="http://www.w3schools.com/tags/tag_span.asp" target="_blank" )
+        %code &lt;span&gt;
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p>
+            I think you are <span class="special">special</span>.
+          </p>
+
+    %p
+      I think you are
+      = succeed "." do
+        %span.special special
+
+    %hr
+
+    %p
+      %code &lt;span&gt;
+      has no onscreen appearance, but you can apply a style or ID to it, which will be applied to the text inside it (inline element).
+
+  %section
+    %h2 CSS context selectors
+
+    %pre.pre--pseudo
+      %code.css( data-trim="" )
+        :preserve
+          selector1 selector2 {
+            /* properties */
+          }
+
+    %p
+      Applies the given properties to
+      %em selector2
+      only if it is inside a
+      %em selector1
+      on that page.
+
+    %br
+
+    %pre.pre--pseudo
+      %code.css( data-trim="" )
+        :preserve
+          selector1 > selector2 {
+            /* properties */
+          }
+
+    %p
+      Applies the given properties to
+      %em selector2
+      %strong only
+      if it is
+      %em directly
+      inside a
+      %em selector1
+      on the page (
+      %em selector2
+      tag is immediately inside
+      %em selector1
+      with no tags in between)
+
+  %section
+    %h2 Context selector example
+
+    %pre
+      %code.html( data-trim="" )
+        :preserve
+          <p>Shop at <strong>Chip's</strong>!</p>
+          <ul>
+            <li>The <strong>best</strong> prices in town!</li>
+            <li>Act now!</li>
+          </ul>
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          li strong { text-decoration: underline; }
+
+    %p
+      Shop at
+      = succeed "!" do
+        %strong Chip's
+    %ul( style="display: block" )
+      %li
+        The
+        %strong( style="text-decoration: underline;" ) best
+        prices in town!
+      %li Act now!
+
+  %section
+    %h2 More complex example
+
+    %pre
+      %code.html( data-trim="" )
+        :preserve
+          <div id="ad">
+            <p>Shop at <strong>Chip's</strong>!</p>
+            <ul>
+              <li class="important">
+                The <strong>best</strong> prices in town!
+              </li>
+              <li>
+                Act <strong>while supplies last</strong>!
+              </li>
+            </ul>
+          </div>
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          #ad li.important strong { text-decoration: underline; }
+
+    #ad
+      %p
+        Shop at
+        = succeed "!" do
+          %strong Chip's
+      %ul( style="display: block" )
+        %li
+          The
+          %strong( style="text-decoration: underline;" ) best
+          prices in town!
+        %li
+          Act
+          = succeed "!" do
+            %strong while supplies last
+
+%section
+  %section
+    %h1 Introduction to Layout
+
+  %section
+    %h1
+      CSS
+      %a( href="http://www.w3schools.com/css/css_boxmodel.asp" target="_blank") Box Model
+
+    %p
+      For layout purposes, every element is composed of:
+      %ul
+        %li.fragment
+          The actual element's
+          %strong content
+        %li.fragment
+          A
+          %strong border
+          around the element
+        %li.fragment
+          %strong padding
+          between the content and the border (inside)
+        %li.fragment
+          A
+          %strong margin
+          between the border and other content (outside)
+
+    %p.fragment
+      total width = content width + L/R padding + L/R border + L/R margin
+      %br
+      total height = content height + T/B padding + T/B border + T/B margin
+
+  %section( data-background="../../images/box-model.gif" data-background-repeat="no-repeat" data-background-size="80% auto" data-background-transition="slide" )
+
+  %section
+    %h2 CSS: borders
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          h6 { border: 5px solid red; }
+
+    %h6.text--left( style="border: 5px solid red;" ) This is a heading.
+
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_border.asp" target="_blank" )
+              %code border
+          %td thickness/style/color of border on all 4 sides
+
+    %p
+      = succeed ": " do
+        %strong thickness
+      specified in
+      = succeed ", " do
+        %code px
+      = succeed ", " do
+        %code pt
+      = succeed ", " do
+        %code em
+      or
+      = succeed ", " do
+        %code( style="border: thin solid;" ) thin
+      = succeed ", " do
+        %code( style="border: medium solid;" ) medium
+      %code( style="border: thick solid;" ) thick
+
+    %p
+      = succeed ": " do
+        %strong style
+      = succeed ", " do
+        %code none
+      = succeed ", " do
+        %code hidden
+      = succeed ", " do
+        %code( style="border: thick dotted;" ) dotted
+      = succeed ", " do
+        %code( style="border: thick dashed;" ) dashed
+      = succeed ", " do
+        %code( style="border: thick double;" ) double
+      = succeed ", " do
+        %code( style="border: thick groove;" ) groove
+      = succeed ", " do
+        %code( style="border: thick inset;" ) inset
+      = succeed ", " do
+        %code( style="border: thick outset;" ) outset
+      = succeed ", " do
+        %code( style="border: thick ridge;" ) ridge
+      = succeed ", " do
+        %code( style="border: thick solid;" ) solid
+    %p
+      = succeed ": " do
+        %strong color
+      specified as seen previously for text and background colors
+
+  %section
+    %h2 Moar border properties
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-color.asp" target="_blank" )
+                %code border-color
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-width.asp" target="_blank" )
+                %code border-width
+
+            %br
+
+            %a( href="http://www.w3schools.com/cssref/pr_border-style.asp" target="_blank" )
+              %code border-style
+
+          %td specific properties of border on all 4 sides
+        %tr
+          %td
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-bottom.asp" target="_blank" )
+                %code border-bottom
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-left.asp" target="_blank" )
+                %code border-left
+
+            %br
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-right.asp" target="_blank" )
+                %code border-right
+
+            %a( href="http://www.w3schools.com/cssref/pr_border-top.asp" target="_blank" )
+              %code border-top
+
+          %td all properties of border on a particular side
+        %tr
+          %td
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-bottom_color.asp" target="_blank" )
+                %code border-bottom-color
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-bottom_style.asp" target="_blank" )
+                %code border-bottom-style
+
+            %br
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-bottom_width.asp" target="_blank" )
+                %code border-bottom-width
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-left_color.asp" target="_blank" )
+                %code border-left-color
+
+            %br
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-left_style.asp" target="_blank" )
+                %code border-left-style
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-left_width.asp" target="_blank" )
+                %code border-left-width
+
+            %br
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-right_color.asp" target="_blank" )
+                %code border-right-color
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-right_style.asp" target="_blank" )
+                %code border-right-style
+
+            %br
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-right_width.asp" target="_blank" )
+                %code border-right-width
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-top_color.asp" target="_blank" )
+                %code border-top-color
+
+            %br
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_border-top_style.asp" target="_blank" )
+                %code border-top-style
+
+            %a( href="http://www.w3schools.com/cssref/pr_border-top_width.asp" target="_blank" )
+              %code border-top-width
+
+          %td properties of border on a particular side
+        %tr
+          %td.text--center( colspan="2" )
+            %a( href="http://www.w3schools.com/css/css_border.asp" target="_blank" ) Complete list of border properties
+
+  %section
+    %h2
+      Rounded corners:
+      %a( href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp" target="_blank" )
+        %code border-radius
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            border: 3px solid plum;
+            border-radius: 12px;
+            padding: 0.5em;
+          }
+
+    %p( style="border: 3px solid plum; border-radius: 12px; padding: 0.5em;" ) This is a paragraph with the above styles applied.
+
+    %hr
+
+    %p Each side's border radius can be set individually, separated by spaces.
+
+
+  %section
+    %h2 CSS: padding
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_padding.asp" target="_blank" )
+              %code padding
+          %td padding on all 4 sides
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_padding-bottom.asp" target="_blank" )
+              %code padding-bottom
+          %td padding on bottom side only
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_padding-left.asp" target="_blank" )
+              %code padding-left
+          %td padding on left side only
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_padding-right.asp" target="_blank" )
+              %code padding-right
+          %td padding on right side only
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_padding-top.asp" target="_blank" )
+              %code padding-top
+          %td padding on top side only
+        %tr
+          %td.text--center( colspan="2" )
+            %a( href="http://www.w3schools.com/css/css_padding.asp" target="_blank" ) Complete list of padding properties
+
+  %section
+    %h2 Padding example
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p { padding: 20px; border: 3px solid gold; }
+          h6 { padding: 0px; background-color: darkmagenta; }
+
+    %p( style="padding: 20px; border: 3px solid gold;" ) This is a paragraph with padding.
+    %h6.text--left( style="padding: 0px; background-color: darkmagenta;" ) This is a heading with no padding.
+
+    %br
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p { padding-left: 200px; padding-top: 30px; background: fuchsia; }
+
+    %p( style="padding-left: 200px; padding-top: 30px; background: fuchsia;" ) This is another paragraph.
+
+    %hr
+
+    %p Each side's padding can be set individually. Notice that padding shares the background color of the element.
+
+  %section
+    %h2 CSS: margin
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_margin.asp" target="_blank" )
+              %code margin
+          %td margin on all 4 sides
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_margin-bottom.asp" target="_blank" )
+              %code margin-bottom
+          %td margin on bottom side only
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_margin-left.asp" target="_blank" )
+              %code margin-left
+          %td margin on left side only
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_margin-right.asp" target="_blank" )
+              %code margin-right
+          %td margin on right side only
+        %tr
+          %td
+            %a( href="http://www.w3schools.com/cssref/pr_margin-top.asp" target="_blank" )
+              %code margin-top
+          %td margin on top side only
+        %tr
+          %td.text--center( colspan="2" )
+            %a( href="http://www.w3schools.com/css/css_margin.asp" target="_blank" ) Complete list of margin properties
+
+  %section
+    %h2 Margin example
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p { margin: 50px; background-color: fuchsia; }
+          h6 { margin-left: 100px; background-color: darkmagenta; }
+
+    %p( style="margin: 50px; background-color: fuchsia;" ) This is a paragraph with 4 margins.
+    %h6.text--left( style="margin-left: 100px; background-color: darkmagenta;" ) This is a heading with a left margin set.
+
+    %hr
+
+    %p Each side's margin can be set individually.
+
+    %p Notice that margins are always transparent (they don't contain the element's background color).
+
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.w3schools.com/css/css_dimension.asp" target="_blank" ) dimensions
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p { width: 350px; background-color: navy; }
+          div { width: 50%; background-color: plum; }
+
+    %p( style="width: 350px; background-color: navy;" ) This is a paragraph using the first style.
+    %div.text--left( style="width: 50%; background-color: plum;" ) This is a div using the second style.
+
+    %hr
+
+    %p The CSS dimension properties allow you to control the height and width of an element.
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_dim_width.asp" target="_blank" )
+                %code width
+            %a( href="http://www.w3schools.com/cssref/pr_dim_height.asp" target="_blank" )
+              %code height
+          %td how wide or tall to make an element (block elements only)
+        %tr
+          %td
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/css/pr_dim_max-width.asp" target="_blank" )
+                %code max-width
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_dim_max-height.asp" target="_blank" )
+                %code max-height
+
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_dim_min-width.asp" target="_blank" )
+                %code min-width
+
+            %a( href="http://www.w3schools.com/cssref/pr_dim_min-height.asp" target="_blank" )
+              %code min-height
+          %td max/min size of an element in given dimension
+
+  %section
+    %h2
+      Centering a block element:
+      %br
+      %code auto
+      margins
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p {
+            background-color: navy;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+          }
+
+    %p( style="background-color: navy; margin-left: auto; margin-right: auto; width: 500px;" ) Powder brownie ice cream.
+
+    %hr
+
+    %p
+      Works best if
+      %code width
+      is set (otherwise, may occupy entire width of page / parent).
+
+    %p
+      To center inline elements within a block element, use
+      %code text-align: center;
+
+%section
+  %section
+    %h1 Floating Elements
+
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.w3schools.com/cssref/pr_class_float.asp" target="_blank" )
+        %code float
+
+    %p
+      %a( href="http://www.w3.org/TR/CSS2/visuren.html#floats" target="_blank" ) Reference.
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %tr
+            %td
+              %code float
+            %td
+              side to float to; can be
+              = succeed ", " do
+                %code left
+              = succeed ", " do
+                %code right
+              or
+              %code none
+              (default)
+
+    %p
+      %img( src="#{ asset_path('png', 'images/float-clipped.png') }" style="float: right; width: 50%;")
+      A
+      %strong
+        %em floating
+      element is removed from normal document flow.
+
+    %p
+      Underlying text wraps around it as necessary.
+
+  %section
+    %h2 Float example
+
+    %pre
+      %code( datat-trim="" )
+        :preserve
+          <p>
+            <img class="example left" src="http://www.placecage.com/c/200/150" alt="Nick Cage">
+            The internet was missing the ability to provide custom-sized
+            placeholder images of Nicolas Cage. Now it can.
+          </p>
+
+    %pre
+      %code( datat-trim="" )
+        :preserve
+          p {
+            border: thin dashed plum;
+          }
+
+          p .left {
+            float: left;
+          }
+
+    %p( style="border: thin dashed plum;" )
+      %img.example.left( src="http://www.placecage.com/c/200/150" alt="Nick Cage" )
+      The internet was missing the ability to provide custom-sized placeholder images of Nicolas Cage. Now it can.
+
+  %section
+    %h2 Floating content &amp; width
+
+    %p( style="background-color: red;" ) I am not floating, no width set.
+    %p( style="float: right; background-color: teal;" ) I am floating right, no width set.
+    %p( style="background-color: teal; float: right;" ) I am floating right, no width set, but my text is very long so this paragraph doesn't really seem like it's floating at all, darn.
+    %p( style="clear: both; float: left; background-color: red; width: 45%;" ) I am not floating, 45% width.
+    %p( style="float: right; background-color: teal; width: 45%;" ) I am floating right, 45% width.
+
+    %hr.clear--both
+
+    %p
+      Often floating elements should have a
+      %code width
+      property value set.
+    %p
+      If no
+      %code width
+      is specified, other content may be unable to wrap around the floating element (undesired results).
+
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.w3schools.com/cssref/pr_class_clear.asp" target="_blank" )
+        %code clear
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p { background-color: fuchsia; }
+          p img.right { float: right; }
+          h6 { background-color: teal; clear: right; }
+
+    %p( style="background-color: fuchsia;" )
+      %img.example.right( src="http://www.placecage.com/c/200/150" alt="Nick Cage" )
+      The internet was missing the ability to provide custom-sized placeholder images of Nicolas Cage. Now it can.
+    %h6.text--left( style="background-color: teal; clear: right;" ) Nicolas Cage waits for no one.
+
+    %hr
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %code clear
+          %td
+            disallows floating elements from overlapping this element; can be
+            = succeed ", " do
+              %code left
+            = succeed ", " do
+              %code right
+            = succeed ", " do
+              %code both
+            or
+            %code none
+            (default)
+
+  %section
+    %h2
+      %code clear
+      diagram
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          div#sidebar { float: right; }
+          p { clear: right; }
+
+    %p.text--center
+      %img.example( src="#{ asset_path('png', 'images/clear.png') }" alt="CSS clear property example" )
+
+  %section
+    %h2 Common float problem: container too short
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          p { border: 3px dashed plum; }
+          p img { float: right; }
+
+    %p( style="border: 3px dashed plum;" )
+      %img.example.right( src="http://www.placecage.com/c/250/150" alt="Nick Cage" )
+      The internet was missing the ability to provide custom-sized placeholder images of Nicolas Cage. Now it can.
+
+    %hr.clear--both
+
+    %p
+      We want the
+      %code &lt;p&gt;
+      containing the image to extend downward so that its border encloses the entire image.
+
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.quirksmode.org/css/clearing.html" target="_blank" )
+        %code overflow
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p class="clearfix">
+            <img src="http://www.placecage.com/c/250/75" alt="Nick Cage">
+            The internet was missing images of Nicolas Cage.
+          </p>
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          /* pseudo-elements generated content before/after the element's contents */
+          .clearfix:after { clear: both; }
+          .clearfix:before, .clearfix:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            overflow: hidden;
+          }
+
+    %p.clearfix( style="border: 3px dashed plum;" )
+      %img.example.right( src="http://www.placecage.com/c/250/75" alt="Nick Cage" )
+      The internet was missing images of Nicolas Cage.
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %code overflow
+          %td
+            specifies what to do if an element's content is too large; can be
+            = succeed ", " do
+              %code hidden
+            = succeed ", " do
+              %code visible
+            = succeed ", " do
+              %code scroll
+            or
+            %code auto
+
+  %section
+    %h2 Multi-column layouts
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <div>
+            <h3>Some heading</h3>
+            <p>The first paragraph.</p>
+            <p>The second paragraph.</p>
+            <p>The third paragraph.</p>
+          </div>
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          div p { float: right; width: 20%; margin: 0.5em; border: 6px groove plum; }
+          div { background-color: darkmagenta; overflow: hidden; }
+
+    %div( style="background-color: darkmagenta; overflow: hidden;" )
+      %h3.text--left Some heading
+      %p( style="float: right; width: 20%; margin: 0.5em; border: 6px groove plum;" ) The first paragraph.
+      %p( style="float: right; width: 20%; margin: 0.5em; border: 6px groove plum;" ) The second paragraph.
+      %p( style="float: right; width: 20%; margin: 0.5em; border: 6px groove plum;" ) The third paragraph.
+
+%section
+  %h1 Take-aways
+
+  %ul
+    %li.fragment HTML is for content. CSS is for presentation.
+    %li.fragment
+      Try not to embed styles (
+      %code &lt;style&gt;
+      in the
+      %code &lt;head&gt;
+      ).
+    %li.fragment
+      Try not to use inline styles (via the
+      %code style
+      attribute).
+      %br
+      Should be used for one-time overrides.
+    %li.fragment
+      HTML
+      %code id
+      attributes should be unique. Unique selectors for CSS.
+    %li.fragment
+      HTML
+      %code class
+      attribute can have multiple classes per element. Generally, for generic, re-usable styles. Can chain classes in CSS selectors:
+      %code p.shout.special { ... }
+    %li.fragment Class names with multiple words are separated by hyphens. Classes are all lowercase (preferred).
+    %li.fragment
+      Floating is can be tricky. Remember to
+      %code clear
+      after floating to preserve layout. Remember to use a
+      %code .clearfix
+      or
+      %code overflow
+      to specifies what to do if an element's content is too large.
+
+%section
+  %h1 CSS Coding Style
+
+  %ul
+    %li.fragment Selectors and opening curly braces are generally on the same line.
+    %li.fragment Properties are indented in two spaces more than the selector.
+    %li.fragment The closing curly brace is on a separate line, indented the same as the selector.
+    %li.fragment Some devs like to alphabetize properties in CSS, some group things (like text stuff with text stuff or width/height dimensions together).
+    %li.fragment Try to group redundant styles together (like headings that share the same color style).

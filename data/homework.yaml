@@ -1,0 +1,27 @@
+-
+  title: Homework 1
+  description: "Getting started. Installing SublimeText 2. Setting up a GitHub account and repository for the class. Finished with a delightful recipe."
+  due_date: 10/26/2013 11:59PM
+  slug: week-1
+  visible: true
+
+-
+  title: Homework 2
+  description: TBD
+  due_date: 11/02/2013 11:59PM
+  slug: week-2
+  visible: false
+
+-
+  title: Homework 3
+  description: TBD
+  due_date: 11/09/2013 11:59PM
+  slug: week-3
+  visible: false
+
+-
+  title: Homework 4
+  description: TBD
+  due_date: 11/16/2013 11:59PM
+  slug: week-4
+  visible: false

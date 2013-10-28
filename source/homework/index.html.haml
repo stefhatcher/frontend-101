@@ -1,0 +1,17 @@
+---
+title: Frontend 101 Homeworks
+
+description: A list of all the Frontend 101 homeworks.
+---
+
+%h1 Frontend 101 Homeworks
+%ol
+  - data.homework.each do |homework|
+    - if homework.visible
+      %li
+        %p
+          %a( href="#{homework.slug}/" ) #{homework.title}
+        %p
+          #{homework.description}
+          %hr
+          Due: #{homework.due_date}
