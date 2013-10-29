@@ -85,12 +85,12 @@ description: "A presentation on the basics of CSS and layout."
           &lt;link href="style.css" type="text/css" rel="stylesheet"&gt;
         &lt;/head&gt;
 
-  %p
+  %p.fragment
     The
     %code &lt;link&gt;
     tag defines the relationship between a document and an external source.
 
-  %p
+  %p.fragment
     The
     %code &lt;link&gt;
     element is an empty element, it contains attributes only. This element goes only in the head section, but it can appear any number of times.
@@ -120,12 +120,12 @@ description: "A presentation on the basics of CSS and layout."
           color: red;
         }
 
-  %p
+  %p.fragment
     A CSS file consists of one or more
     = succeed "." do
       %strong rules
 
-  %p
+  %p.fragment
     A rule's
     %strong selector
     specifies HTML elements(s) and applies style
@@ -207,11 +207,11 @@ description: "A presentation on the basics of CSS and layout."
     %h2
       %a( href="http://www.w3schools.com/cssref/css_colornames.asp" target="_blank" ) Color Names
 
-    %p Referring to a color by name.
+    %p.fragment Referring to a color by name.
 
-    %p 140 color names are defined in the HTML and CSS color specification (17 standard colors plus 123 more).
+    %p.fragment 140 color names are defined in the HTML and CSS color specification (17 standard colors plus 123 more).
 
-    %p
+    %p.fragment
       The 17 standard colors are:
       = succeed ", " do
         %span( style="color: aqua" ) aqua
@@ -313,24 +313,24 @@ description: "A presentation on the basics of CSS and layout."
       %code( data-trim="" )
         :preserve
           p {
-            font-family: "Comic Sans", Helvetica, sans-serif;
+            font-family: Helvetica, sans-serif;
           }
 
           code {
             font-family: "Courier New";
           }
 
-    %p( style="font-family: 'Comic Sans';" ) This paragraph uses the first style above...
-    %p
+    %p( style="font-family: Helvetica, sans-serif;" ) This paragraph uses the first style above...
+    %p( style="font-family: 'Courier New', monospace;")
       The
       %code code element
       in this paragraph uses the second style above.
 
     %hr
 
-    %p Enclose multi-word font names in quotes. Can specify multiple fonts from highest to lowest priority.
+    %p.fragment Enclose multi-word font names in quotes. Can specify multiple fonts from highest to lowest priority.
 
-    %p
+    %p.fragment
       %strong Generic font names:
       = succeed ", " do
         %span( style="font-family: serif;" ) serif
@@ -357,7 +357,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %p( style="font-size: 14pt;" ) This paragraph uses the style above.
     %hr
-    %p
+    %p.fragment
       %a( href="http://www.w3schools.com/cssref/css_units.asp" target="_blank" )
         units: pixels (
         %code px
@@ -373,7 +373,7 @@ description: "A presentation on the basics of CSS and layout."
         %code( style="font-size: 16pt;" ) 16pt
       %code( style="font-size: 1.16em;" ) 1.16em
 
-    %p
+    %p.fragment
       Vauge font sizes:
       = succeed ", " do
         %code( style="font-size: xx-small;" ) xx-small
@@ -393,7 +393,7 @@ description: "A presentation on the basics of CSS and layout."
         %code( style="font-size: smaller;" ) smaller
       %code( style="font-size: larger;" ) larger
 
-    %p
+    %p.fragment
       Percentage font sizes, e.g.:
       = succeed ", " do
         %code( style="font-size: 90%;" ) 90%
@@ -418,7 +418,7 @@ description: "A presentation on the basics of CSS and layout."
     %p( style="font-style: italic; font-weight: bold;" ) This paragraph uses the style above.
     %hr
 
-    %p
+    %p.fragment
       Either of the above can be set to
       %code normal
       to turn them off (e.g. for headings or blockquotes)
@@ -443,9 +443,9 @@ description: "A presentation on the basics of CSS and layout."
       %em( style="color: gold; background-color: green;" ) emphasis
   %hr
 
-  %p
+  %p.fragment
     A style can select multiple elements separated by commas.
-  %p
+  %p.fragment
     The individual elements can also have their own styles (like
     %code em
     above).
@@ -462,12 +462,12 @@ description: "A presentation on the basics of CSS and layout."
           color: red;
         }
 
-  %p CSS (like HTML) is usually not commented as much as code like Javascript.
-  %p
+  %p.fragment CSS (like HTML) is usually not commented as much as code like Javascript.
+  %p.fragment
     The
     %code //
     single-line comment style is NOT supported in CSS.
-  %p
+  %p.fragment
     The
     %code &lt;!-- ... -->
     HTML comment style is also NOT supported in CSS.
@@ -667,7 +667,7 @@ description: "A presentation on the basics of CSS and layout."
       = succeed "." do
         %code section
     %hr
-    %p Background image/color fills the element's content area.
+    %p.fragment Background image/color fills the element's content area.
 
   %section( style="background-color: rgba(0, 0, 0, 0.65);" data-background="http://placekitten.com/g/200/200" data-background-repeat="repeat-x" data-background-size="200px" data-background-transition="slide" )
     %h2
@@ -686,7 +686,7 @@ description: "A presentation on the basics of CSS and layout."
       = succeed "." do
         %code section
     %hr
-    %p
+    %p.fragment
       %code background-repeat
       can be
       %code repeat
@@ -716,13 +716,13 @@ description: "A presentation on the basics of CSS and layout."
       = succeed "." do
         %code section
     %hr
-    %p
+    %p.fragment
       %code background-position
       value consists of two tokens.
-    %p
+    %p.fragment
       The first relates to the x-axis (horizontal) positioning.
       The second relates to the y-axis (vertical) positioning.
-    %p
+    %p.fragment
       Each of which can be a percentage, a length value in
       = succeed ", " do
         %code px
@@ -810,12 +810,12 @@ description: "A presentation on the basics of CSS and layout."
           font-size: 16px;
         }
 
-  %p
+  %p.fragment
     To apply a style to the entire body of your page, write a selector for the
     %code body
     element.
 
-  %p This saves you from manually applying a style to each element.
+  %p.fragment This saves you from manually applying a style to each element.
 
 %section
   %h1 Conflicting Styles
@@ -835,7 +835,7 @@ description: "A presentation on the basics of CSS and layout."
 
   %hr
 
-  %p If you define a style property, and later define an alternative style property for the same thing, the later definition over-rules the earlier one.
+  %p.fragment If you define a style property, and later define an alternative style property for the same thing, the later definition over-rules the earlier one.
 
 %section
   %h1
@@ -859,16 +859,16 @@ description: "A presentation on the basics of CSS and layout."
 
   %hr
 
-  %p
+  %p.fragment
     When multiple styles apply to an element, they are
     = succeed "--" do
       %a( href="http://coding.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/" target="_blank" )
         %strong inherited
     a way of propagating property values from parent elements to their children.
 
-  %p A more tightly matching rule can override a more general inherited rule (notice the link's color).
+  %p.fragment A more tightly matching rule can override a more general inherited rule (notice the link's color).
 
-  %p
+  %p.fragment
     Not all properties are inherited, but you can force ones to be by using the
     %code inherit
     value.
@@ -886,7 +886,7 @@ description: "A presentation on the basics of CSS and layout."
           &lt;/style&gt;
         &lt;/head&gt;
 
-  %p
+  %p.fragment
     CSS code can be embedded within the
     %code head
     of an HTML page using the
@@ -894,7 +894,7 @@ description: "A presentation on the basics of CSS and layout."
       %code &lt;style&gt;
     tag.
 
-  %p
+  %p.fragment
     This is considered
     = succeed "; " do
       %em bad style
@@ -913,9 +913,9 @@ description: "A presentation on the basics of CSS and layout."
           This is a paragraph with inline styles.
         </p>
 
-  %p Inline styles have higher precedence than embedded or linked styles.
-  %p Should be used for one-time overrides and styling a particular element.
-  %p
+  %p.fragment Inline styles have higher precedence than embedded or linked styles.
+  %p.fragment Should be used for one-time overrides and styling a particular element.
+  %p.fragment
     But this is
     = succeed "; " do
       %em bad style
@@ -1027,7 +1027,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p
+    %p.fragment
       The CSS ID selector applies style only to the paragraph that has the ID of
       = succeed "." do
         %code missions
@@ -1050,10 +1050,10 @@ description: "A presentation on the basics of CSS and layout."
           <p class="special">But you're still special.</p>
           <p class="special really-special">...Really special.</p>
 
-    %p
+    %p.fragment
       Classes are a way to group some elements and give a style to only that group. ("I don't want ALL paragraphs to be special, just these ones.")
 
-    %p
+    %p.fragment
       Unlike an
       = succeed ", " do
         %code id
@@ -1061,7 +1061,7 @@ description: "A presentation on the basics of CSS and layout."
       %code class
       can be nested as much as you like on the page.
 
-    %p
+    %p.fragment
       You can also have multiple classes per element.
       %br
       (e.g. "
@@ -1116,7 +1116,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p An element can be a member of multiple classes (separated by spaces).
+    %p.fragment An element can be a member of multiple classes (separated by spaces).
 
   %section
     %h1
@@ -1142,8 +1142,8 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p A tag used to indicate a logical section or area of a page (block element).
-    %p It has no appearance by default, but you can apply styles to it.
+    %p.fragment A tag used to indicate a logical section or area of a page (block element).
+    %p.fragment It has no appearance by default, but you can apply styles to it.
 
   %section
     %h1
@@ -1165,7 +1165,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p
+    %p.fragment
       %code &lt;span&gt;
       has no onscreen appearance, but you can apply a style or ID to it, which will be applied to the text inside it (inline element).
 
@@ -1331,7 +1331,7 @@ description: "A presentation on the basics of CSS and layout."
               %code border
           %td thickness/style/color of border on all 4 sides
 
-    %p
+    %p.fragment
       = succeed ": " do
         %strong thickness
       specified in
@@ -1348,7 +1348,7 @@ description: "A presentation on the basics of CSS and layout."
         %code( style="border: medium solid;" ) medium
       %code( style="border: thick solid;" ) thick
 
-    %p
+    %p.fragment
       = succeed ": " do
         %strong style
       = succeed ", " do
@@ -1371,7 +1371,7 @@ description: "A presentation on the basics of CSS and layout."
         %code( style="border: thick ridge;" ) ridge
       = succeed ", " do
         %code( style="border: thick solid;" ) solid
-    %p
+    %p.fragment
       = succeed ": " do
         %strong color
       specified as seen previously for text and background colors
@@ -1503,7 +1503,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p Each side's border radius can be set individually, separated by spaces.
+    %p.fragment Each side's border radius can be set individually, separated by spaces.
 
 
   %section
@@ -1566,7 +1566,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p Each side's padding can be set individually. Notice that padding shares the background color of the element.
+    %p.fragment Each side's padding can be set individually. Notice that padding shares the background color of the element.
 
   %section
     %h2 CSS: margin
@@ -1619,9 +1619,9 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p Each side's margin can be set individually.
+    %p.fragment Each side's margin can be set individually.
 
-    %p Notice that margins are always transparent (they don't contain the element's background color).
+    %p.fragment Notice that margins are always transparent (they don't contain the element's background color).
 
   %section
     %h2
@@ -1639,7 +1639,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p The CSS dimension properties allow you to control the height and width of an element.
+    %p.fragment The CSS dimension properties allow you to control the height and width of an element.
 
     %table
       %tbody
@@ -1693,12 +1693,12 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr
 
-    %p
+    %p.fragment
       Works best if
       %code width
       is set (otherwise, may occupy entire width of page / parent).
 
-    %p
+    %p.fragment
       To center inline elements within a block element, use
       %code text-align: center;
 
@@ -1734,14 +1734,14 @@ description: "A presentation on the basics of CSS and layout."
               %code none
               (default)
 
-    %p
+    %p.fragment
       %img( src="#{ asset_path('png', 'images/float-clipped.png') }" style="float: right; width: 50%;")
       A
       %strong
         %em floating
       element is removed from normal document flow.
 
-    %p
+    %p.fragment
       Underlying text wraps around it as necessary.
 
   %section
@@ -1782,11 +1782,11 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr.clear--both
 
-    %p
+    %p.fragment
       Often floating elements should have a
       %code width
       property value set.
-    %p
+    %p.fragment
       If no
       %code width
       is specified, other content may be unable to wrap around the floating element (undesired results).
@@ -1860,7 +1860,7 @@ description: "A presentation on the basics of CSS and layout."
 
     %hr.clear--both
 
-    %p
+    %p.fragment
       We want the
       %code &lt;p&gt;
       containing the image to extend downward so that its border encloses the entire image.
