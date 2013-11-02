@@ -1,148 +1,153 @@
-%h1 Homework 1
-
-%p Last commit due by: #{data.homework[0].due_date}
+%section
+  .row
+    .column.column--one-whole
+      %h1 Homework 1
+      %p Last commit due by: #{data.homework[0].due_date}
 
 %section#get-a-text-editor
-  %h2 Part I: Get SublimeText 2
+  .row
+    .column.column--one-whole
+      %h2 Part I: Get SublimeText 2
+      %p SublimeText 2 is the editor of choice for this class.
 
-  %p SublimeText 2 is the editor of choice for this class.
+      %ol
+        %li
+          Go to
+          %a( href="http://www.sublimetext.com/2" target="_blank" ) http://www.sublimetext.com/2
+          and choose the apporpriate download option (probably "OS X (OS X 10.6 or later is required)").
+        %li After it's download, install it. Should just be a drag-and-drop-into-the-applications-folder kind of thing.
 
-  %ol
-    %li
-      Go to
-      %a( href="http://www.sublimetext.com/2" target="_blank" ) http://www.sublimetext.com/2
-      and choose the apporpriate download option (probably "OS X (OS X 10.6 or later is required)").
-    %li After it's download, install it. Should just be a drag-and-drop-into-the-applications-folder kind of thing.
-
-%hr
 
 %section#setup-github
-  %h2 Part II: Setup GitHub
+  .row
+    .column.column--one-whole
+      %h2 Part II: Setup GitHub
 
-  %p To keep track of your homework, give you feedback and to give you an idea of the world of code repositories, I've chosen GitHub. We use it at work for all projects in one way or another. It has made some major changes so it is much more friendly for those not used to using a terminal. I'll walk you through how to get started. If you'd like to go through the terminal experience, I'd be more than happy to set it up together after work or during an office hour!
+      %p To keep track of your homework, give you feedback and to give you an idea of the world of code repositories, I've chosen GitHub. We use it at work for all projects in one way or another. It has made some major changes so it is much more friendly for those not used to using a terminal. I'll walk you through how to get started. If you'd like to go through the terminal experience, I'd be more than happy to set it up together after work or during an office hour!
 
-  %p Follow these steps to *git* started and setup a repo!
+      %p Follow these steps to *git* started and setup a repo!
 
-  %ol
-    %li
-      %p
-        Go to
-        %a( href="http://github.com" target="_blank" ) http://github.com
-        and sign up for an account.
-        = image_tag "homework-1/sign-up.jpg"
+      %ol
+        %li
+          %p
+            Go to
+            %a( href="http://github.com" target="_blank" ) http://github.com
+            and sign up for an account.
+            = image_tag "homework-1/sign-up.jpg"
 
-      %p
-        If you already have an account, go to
-        %a( href="https://help.github.com/articles/set-up-git" target="_blank" ) https://help.github.com/articles/set-up-git
-        and skip ahead to Step 3.
+          %p
+            If you already have an account, go to
+            %a( href="https://help.github.com/articles/set-up-git" target="_blank" ) https://help.github.com/articles/set-up-git
+            and skip ahead to Step 3.
 
-    %li
-      %p
-        You should now be at a dashboard view. Click on "Set up Git."
-        = image_tag "homework-1/set-up-git-1.jpg"
+        %li
+          %p
+            You should now be at a dashboard view. Click on "Set up Git."
+            = image_tag "homework-1/set-up-git-1.jpg"
 
-    %li
-      %p
-        Download the native app.
-        = image_tag "homework-1/download-github.jpg"
+        %li
+          %p
+            Download the native app.
+            = image_tag "homework-1/download-github.jpg"
 
-    %li
-      %p
-        Install the app after it has downloaded. Open it. It will guide you through hooking up your new GitHub account. After it's complete setting you up, you should have a window similar to this. Success? Sweet. Click the "+" and "Create New Repository..."
-        = image_tag "homework-1/create-new.jpg"
+        %li
+          %p
+            Install the app after it has downloaded. Open it. It will guide you through hooking up your new GitHub account. After it's complete setting you up, you should have a window similar to this. Success? Sweet. Click the "+" and "Create New Repository..."
+            = image_tag "homework-1/create-new.jpg"
 
-    %li
-      %p
-        Create a new repository. Be sure to create it in a location you will remember, like the Desktop. Name the repository "frontend-101" -- all lowercase, exactly as shown. Click the "Creat Repository" button when you're ready. After pushing it, you will notice a folder is on your Desktop (or chosen location) labeled "frontend-101"
-        = image_tag "homework-1/create-repo.jpg"
+        %li
+          %p
+            Create a new repository. Be sure to create it in a location you will remember, like the Desktop. Name the repository "frontend-101" -- all lowercase, exactly as shown. Click the "Creat Repository" button when you're ready. After pushing it, you will notice a folder is on your Desktop (or chosen location) labeled "frontend-101"
+            = image_tag "homework-1/create-repo.jpg"
 
-    %li
-      %p Open up SublimeText 2. Open your new repo folder from SublimeText 2. You can either drag your folder icon to the SublimeText 2 icon in your Dock, or you can open it from File &gt; Open &gt; Navigate to the folder containing your folder and select the repo folder.
+        %li
+          %p Open up SublimeText 2. Open your new repo folder from SublimeText 2. You can either drag your folder icon to the SublimeText 2 icon in your Dock, or you can open it from File &gt; Open &gt; Navigate to the folder containing your folder and select the repo folder.
 
-    %li
-      %p
-        Once your project is open, from the sidebar, you can right click and choose a few options. Right click on your folder's label "frontend-101" and choose "New File". Add "Hello" to the file and save. Save the file as "index.html"
-        = image_tag "homework-1/create-new-file-1.jpg"
-        = image_tag "homework-1/save-new-file-1.jpg"
+        %li
+          %p
+            Once your project is open, from the sidebar, you can right click and choose a few options. Right click on your folder's label "frontend-101" and choose "New File". Add "Hello" to the file and save. Save the file as "index.html"
+            = image_tag "homework-1/create-new-file-1.jpg"
+            = image_tag "homework-1/save-new-file-1.jpg"
 
-    %li
-      %p
-        Right click again on your folder's label "frontend-101" and chose "New Folder". Name the folder "week-1". All homework folders will be named with this convention "week-x". "week-1" should be directly within the "frontend-101" folder. You can also add this folder through Finder if you'd like. Once "week-1" is created, repeat the process to create a new file. Right click on "week-1" lable in SublimeText 2 and choose "New File". Add "Week 1" to the new file and save. Save the file as "index.html". You should now have two "index.html" files, one directly within the "frontend-101" folder and another directly within the "week-1" folder.
-        = image_tag "homework-1/create-new-file-2.jpg"
-        = image_tag "homework-1/save-new-file-2.jpg"
+        %li
+          %p
+            Right click again on your folder's label "frontend-101" and chose "New Folder". Name the folder "week-1". All homework folders will be named with this convention "week-x". "week-1" should be directly within the "frontend-101" folder. You can also add this folder through Finder if you'd like. Once "week-1" is created, repeat the process to create a new file. Right click on "week-1" lable in SublimeText 2 and choose "New File". Add "Week 1" to the new file and save. Save the file as "index.html". You should now have two "index.html" files, one directly within the "frontend-101" folder and another directly within the "week-1" folder.
+            = image_tag "homework-1/create-new-file-2.jpg"
+            = image_tag "homework-1/save-new-file-2.jpg"
 
-      %p You can view your files through Chrome. In Chrome, File &gt; Open File &gt; open one of your index.html files.
+          %p You can view your files through Chrome. In Chrome, File &gt; Open File &gt; open one of your index.html files.
 
-    %li
-      %p
-        Cool. Now you're ready to commit your changes to get. Go back to your GitHub app and you'll notice the "Changes" tab has changed -- it's colored. Click the "Changes" tab.
-        = image_tag "homework-1/commit-1.jpg"
+        %li
+          %p
+            Cool. Now you're ready to commit your changes to get. Go back to your GitHub app and you'll notice the "Changes" tab has changed -- it's colored. Click the "Changes" tab.
+            = image_tag "homework-1/commit-1.jpg"
 
-    %li
-      %p
-        The app will show you the differences and changes made. You can review these changes and choose which files get added to the commit. Committing to a repo is updating the repo. Go ahead and add a commit message. Commit messages should be little summaries to help you and others look back later on. Add a message and press commit.
-        = image_tag "homework-1/commit-2.jpg"
+        %li
+          %p
+            The app will show you the differences and changes made. You can review these changes and choose which files get added to the commit. Committing to a repo is updating the repo. Go ahead and add a commit message. Commit messages should be little summaries to help you and others look back later on. Add a message and press commit.
+            = image_tag "homework-1/commit-2.jpg"
 
-    %li
-      %p
-        After pressing the commit button, you'll notice an unsynced commit under "Unsynced Commits". This means the repo is not totally updated yet. Your changes have been logged, but not fully merged with the repo.
-        = image_tag "homework-1/commit-3.jpg"
+        %li
+          %p
+            After pressing the commit button, you'll notice an unsynced commit under "Unsynced Commits". This means the repo is not totally updated yet. Your changes have been logged, but not fully merged with the repo.
+            = image_tag "homework-1/commit-3.jpg"
 
-      %p
-        To push these change all the way through and sync your commit with the repo, go to the "Branches" tab. You'll see an option to "Publish". Click "Publish". Go to GitHub in your browser, navigate to your "frontend-101" repo, you should see that your index.html files and "week-1" directory should be pushed.
-        = image_tag "homework-1/commit-4.jpg"
+          %p
+            To push these change all the way through and sync your commit with the repo, go to the "Branches" tab. You'll see an option to "Publish". Click "Publish". Go to GitHub in your browser, navigate to your "frontend-101" repo, you should see that your index.html files and "week-1" directory should be pushed.
+            = image_tag "homework-1/commit-4.jpg"
 
-    %li
-      %p
-        Add me (stefhatcher) as a collaborator to your repo. Go to
-        %a( href="https://github.com/stefhatcher/"  target="_blank" ) https://github.com/stefhatcher/
-        and "Follow" me.
-        = image_tag "homework-1/follow-me.jpg"
+        %li
+          %p
+            Add me (stefhatcher) as a collaborator to your repo. Go to
+            %a( href="https://github.com/stefhatcher/"  target="_blank" ) https://github.com/stefhatcher/
+            and "Follow" me.
+            = image_tag "homework-1/follow-me.jpg"
 
-    %li
-      %p
-        After that, back at your "frontend-101" repo page on GitHub, click on the "Settings" option on the right.
-        = image_tag "homework-1/add-collab-1.jpg"
+        %li
+          %p
+            After that, back at your "frontend-101" repo page on GitHub, click on the "Settings" option on the right.
+            = image_tag "homework-1/add-collab-1.jpg"
 
-    %li
-      %p
-        Next, click on "Collaborators" and add "stefhatcher".
-        = image_tag "homework-1/add-collab-2.jpg"
+        %li
+          %p
+            Next, click on "Collaborators" and add "stefhatcher".
+            = image_tag "homework-1/add-collab-2.jpg"
 
-    %li
-      %p Yay! Now you are all setup. You'll be turning in your homework each week (and progress) to your repo. I'll be adding comments as kind of a "code review" to provide feedback. I'll grade the repo at the most recent state up until the due date and time.
+        %li
+          %p Yay! Now you are all setup. You'll be turning in your homework each week (and progress) to your repo. I'll be adding comments as kind of a "code review" to provide feedback. I'll grade the repo at the most recent state up until the due date and time.
 
-%hr
 
 %section#week-1-html
   / Grandma's Pies originally from Marty Stepp, CSE 190M Spring 2011.
-  %h2 Grandma's Pies Website
+  .row
+    .column.column--one-whole
+      %h2 Grandma's Pies Website
 
-  %p You will be completing two web pages: index.html and pie.html
-  %p These web pages should be within the frontend-101/week-1/ folder.
+      %p You will be completing two web pages: index.html and pie.html
+      %p These web pages should be within the frontend-101/week-1/ folder.
 
-  %p
-    %code index.html
-    is a front page for this web site, stored in a file named index.html (you already created this file in Part II, hopefully). Your front page must contain a link to
-    = succeed "." do
-      %code pie.html
-    The file must be at least 20 lines long and must contain at least 4 different HTML elements in its body.
+      %p
+        %code index.html
+        is a front page for this web site, stored in a file named index.html (you already created this file in Part II, hopefully). Your front page must contain a link to
+        = succeed "." do
+          %code pie.html
+        The file must be at least 20 lines long and must contain at least 4 different HTML elements in its body.
 
-  %p
-    %code pie.html
-    is a specific web page of a recipe for lemon meringue piew, stored in a file named pie.html. Give the content a good thought.
-    Take the contents of
-    %a( href="output.txt" target="_blank" ) this recipe
-    and add the appropriate markup. You can copy and paste the provided text file into SublimeText 2 and get started adding tags.
-    Decide what HTML elements would best suit the content. Remember, HTML is used to label and describe content, so choose wisely.
+      %p
+        %code pie.html
+        is a specific web page of a recipe for lemon meringue piew, stored in a file named pie.html. Give the content a good thought.
+        Take the contents of
+        %a( href="output.txt" target="_blank" ) this recipe
+        and add the appropriate markup. You can copy and paste the provided text file into SublimeText 2 and get started adding tags.
+        Decide what HTML elements would best suit the content. Remember, HTML is used to label and describe content, so choose wisely.
 
-  %h3 Bonus Features
+      %h3 Bonus Features
 
-  %p Some things you will have to explore on your own to learn how to complete.
+      %p Some things you will have to explore on your own to learn how to complete.
 
-  %ul
-    %li Add a pie favicon. Set the page to have a "favorites icon." Use absolute URLs to link to all images.
-    %li Add some images.
-    %li Try to make your code readable. Be consistent with spacing and indentation.
-    %li Near the top of your pie.html file, put a comment saying which extra features you have completed and leave any notes for your collaborators.
-    %li Explore the source code for the first presentation. Do some research on any tags I may have used but did not cover in the presentation. Are they being used appropriately? Notice any funny attributes? Put a comment at the top of your index.html
+      %ul
+        %li Add a pie favicon. Set the page to have a "favorites icon." Use absolute URLs to link to all images.
+        %li Add some images.
+        %li Try to make your code readable. Be consistent with spacing and indentation.
+        %li Near the top of your pie.html file, put a comment saying which extra features you have completed and leave any notes for your collaborators.
+        %li Explore the source code for the first presentation. Do some research on any tags I may have used but did not cover in the presentation. Are they being used appropriately? Notice any funny attributes? Put a comment at the top of your index.html

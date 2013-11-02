@@ -7,10 +7,10 @@
 
 -
   title: Homework 2
-  description: TBD
-  due_date: 11/02/2013 11:59PM
+  description: Cupcake Ipsum Blog
+  due_date: 11/06/2013 11:59PM
   slug: week-2
-  visible: false
+  visible: true
 
 -
   title: Homework 3

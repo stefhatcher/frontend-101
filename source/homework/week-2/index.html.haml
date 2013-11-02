@@ -1,0 +1,136 @@
+%section
+  .row
+    .column.column--one-whole
+      %h1 Homework 2
+      %p Last commit due by: #{data.homework[1].due_date}
+
+      %p
+        A great resource for this homework:
+        = succeed ". " do
+          %a( href="https://developers.google.com/chrome-developer-tools/" target="_blank" ) Chrome Dev Tools
+        You can open the Dev Tools by right-click and "Inspect Element" anything on the page. It'll show you want styles are being applied to an element as well as computed values like margins, padding, width and height.
+
+%section
+  .row
+    .column.column--one-whole
+      %h2 Part 1: Organizing a page into sections
+
+      %ol
+        %li
+          %p Prepare your files.
+          %ol
+            %li
+              Create a new folder in your
+              %code frontend-101
+              folder. Name it
+              = succeed "." do
+                %code week-2
+            %li
+              Within the week-2 folder, create a new file, save it and name it
+              %code index.html
+            %li
+              Within the week-2 folder, create a new file, save it and name it
+              %code style.css
+
+        %li
+          %a( href="blog.html" ) Download this HTML file
+          (right-click "Save Link As") and copy/paste the contents into your new
+          %code index.html
+          file. Open the saved
+          %code index.html
+          page in Chrome.
+
+        %li
+          Organize
+          %code index.html
+          by adding
+          = succeed "s, " do
+            %code id
+          = succeed "es, " do
+            %code class
+          = succeed "s " do
+            %code span
+          = succeed "s." do
+            %code div
+        %p
+          Styles will alternate between even and odd number articles, so adding some
+          = succeed "es " do
+            %code class
+          to tell the difference will help.
+
+        %li
+          Add thick solid borders around these sections, giving each a different color, by editing your
+          %code style.css
+          %br
+          This is mainly for debugging purposes. The only major changes to make to the HTML are adding
+          = succeed "s, " do
+            %code id
+          = succeed "es, " do
+            %code class
+          = succeed "s " do
+            %code span
+          and
+          = succeed "s." do
+            %code div
+        %li
+          Example of the page into sections with borders:
+          %img( src="part-1.png" alt="section examples" width="100%" )
+
+%section
+  .row
+    .column.column--one-whole
+      %h2 Part 2: Spacing with padding and margins
+      %p
+        Add padding and margins to the page. Change only your
+        %code style.css
+        file.
+      %p Every time you change your CSS and want to see how it has changed the page, save the file and then refresh your page.
+      %p
+        Use and checkout this article on the box-model and using this CSS:
+        %a( href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/"  target="_blank" )
+          %code box-sizing: border-box;
+
+      %ol
+        %li The body should have no margins.
+        %li All paragraphs should have a bottom margin of 1.25em
+        %li The box with the red border should have 50px of padding all sides. The blog title should have no margins.
+        %li The box with the black border should have 10px padding on the top and bottom, 20px padding on the left and right sides. The list of links within the box with the black border should have no padding. The heading and list items should have no margin.
+        %li The box with the blue border should have are right margin of 25%. All h2 and h3s should have no margins, but h6s should have a bottom margin of 20px.
+        %li Any boxes with a green border (articles) should have a padding of 40px on the top and bottom, 20px on the left and right sides. Any image directly in the first and every other after that (odd numbered) articles, should have a left margin of 20px, all other margins of 0. Any image directly in the second and every other after that (even numbered) articles, should have a right margin of 20px, all other margin of 0. Any image anywhere in an article, should have a thin solid border colored #D3D3D3 and a border-raidus of 25px.
+
+        %li
+          Example of the page into sections with padding and margins:
+          %img( src="part-2.png" alt="padding and margins example" width="100%" )
+
+
+%section
+  .row
+    .column.column--one-whole
+      %h2 Part 3: Dimensions, backgrounds, float, alignment and clear
+
+      %ol
+        %li The body should have the gainsboro background color. The body should also have the font-family of Helvetica, arial, and sans-serif. The default font size should be 16px with a line-height of 1.6 (unitless). Default font-weight should be the value of 200 (thin).
+        %li The red box should have a height of 320px and a full, 100% width. The background image should be from http://placekitten.com/g/1400/800. It does not repeat, it is centered horizontally with a top position vertically. To ensure it is a full covering image, the background-size should be cover. Any text in the red box should be white. Also, to make sure the image is full, we should prevent any overflow from being visible (hidden). The heading should have a font-weight of 300 (this is considered 'light') and no margins.
+        %li The black box of links should have a black background. Since it has a black background, let's make the color of text white. The list of links should have a smaller font-size, a size of 14px. The list style should also have no bullets, none. Let's also space out the letters in the heading by 1px.
+        %li All links should have a color of #2ba6cb and no text decoration. On hover, though, all links should have a color of #2795b6 and have an underline for text decoration.
+        %li The blue box should have a white background and a right border, thin and solid with the color #D3D3D3. The blue box should also be 75% wide. Any h2 within the blue box should have a line-height of 1.
+        %li Any even numbered article should have a #f0f0f0 background color. All articles should have a thin solid border on top with the color #D3D3D3. Any image directly under an even numbered article should float to the left. Any image directly under an odd numbered article should float to the right. We'll let the widths be whatever.
+        %li
+          Anything that has something floating in it, should clear the effects.
+          %a( href="../../presentation/week-2/#/22" ) Checkout these slides on floating.
+          Feel free to add more classes to clear the effects.
+        %li
+          Example of the page so far:
+          %img( src="part-3.png" alt="backgrounds, floats, dimensions and clear example" width="100%" )
+
+%section
+  .row
+    .column.column--one-whole
+      %h2 Part 4: Final finesse
+
+      %p Remove the debug borders applied to the sections in Part 1.
+
+      %p
+        Your solution should look like this:
+        %a( href="solution.png" target="_blank" )
+          %img( src="solution.png" alt="final solution" width="100%" style="display: block" )

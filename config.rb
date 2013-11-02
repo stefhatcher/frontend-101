@@ -21,7 +21,7 @@ end
 page "/presentations/index.html", :layout => :layout
 
 # FALSE FOR WEEK ONE
-# page "index.html", :layout => false
+page "homework/week-2/blog.html", :layout => false
 
 #
 # A path which all have the same layout

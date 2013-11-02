@@ -1,0 +1,129 @@
+@import "compass";
+
+
+/* Global Styles */
+
+* {
+  @include box-sizing(border-box);
+}
+
+a {
+  color: #2ba6cb;
+  text-decoration: none;
+  line-height: inherit;
+
+  &:hover {
+    color: #2795b6;
+    text-decoration: underline;
+  }
+}
+
+article {
+  border-top: 1px solid #d3d3d3;
+  padding: 40px 20px;
+
+  img {
+    border: 1px solid #d3d3d3;
+    border-radius: 25px;
+  }
+
+  &.even {
+    background: rgb(240, 240, 240);
+  }
+
+  &.odd > img {
+    @include float-right;
+    margin: 0 0 0 20px;
+  }
+
+  &.even > img {
+    @include float-left;
+    margin: 0 20px 0 0;
+  }
+}
+
+body {
+  background: gainsboro;
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.6;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1.25em;
+}
+
+/* Global Styles by class */
+
+.clearfix {
+  &:after {
+    clear: both;
+  }
+
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+
+/* Unique Styles */
+
+#header {
+  background: transparent url('http://placekitten.com/g/1400/800') no-repeat 50% 0%;
+  background-size: cover;
+  color: white;
+  padding: 50px 20px;
+  height: 320px;
+  width: 100%;
+  overflow: hidden;
+
+  h1 {
+    font-weight: 300;
+    margin: 0;
+  }
+}
+
+#links {
+  @include float-right;
+  background: black;
+  color: white;
+  overflow: hidden;
+  padding: 10px 20px;
+  width: 25%;
+
+  h3 {
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  ul {
+    @include no-bullets;
+    font-size: 14px;
+    padding: 0;
+  }
+}
+
+#blogs {
+  background: white;
+  border-right: 1px solid #d3d3d3;
+  margin-right: 25%;
+  width: 75%;
+
+  h2 {
+    line-height: 1;
+    padding: 20px;
+  }
+
+  h2, h3 {
+    margin: 0;
+  }
+
+  h6 {
+    margin: 0 0 20px;
+  }
+}
