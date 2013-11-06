@@ -22,6 +22,35 @@
   title: "CSS Tricks"
   link: "http://css-tricks.com/"
 
+
+- title: "CSS Tricks: transition"
+  link: "http://css-tricks.com/almanac/properties/t/transition/"
+
 -
   title: "CSS Zen Garden"
   link: "http://www.csszengarden.com/"
+
+-
+  title: "Centering in the Unknown"
+  link: "http://css-tricks.com/centering-in-the-unknown/"
+
+-
+  title: "Absolute Horizontal And Vertical Centering In CSS"
+  link: "http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/"
+
+-
+  title: "Responsive Design in 3 Steps"
+  link: "http://webdesignerwall.com/tutorials/responsive-design-in-3-steps"
+
+-
+  title: "Responsive Design with CSS3 Media Queries"
+  link: "http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries"
+
+-
+  title: "Custom Easings for CSS and/or JS"
+  link: "http://easings.net/"
+
+-
+  title: "Mobile + Tablet Device Dimensions"
+  link: "http://stefhatcher.com/projects/device-dimensions/"
+
