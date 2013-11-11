@@ -138,10 +138,12 @@
 
     img.left {
       float: left;
+      margin-right: 10px;
     }
 
     img.right {
       float: right;
+      margin-left: 10px;
     }
 
     .border--none {
@@ -286,4 +288,55 @@
 
 .clear--both {
   clear: both;
+}
+
+.transition-example-hover--1 {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  @include transition(background-color 0.5s ease-out);
+
+  &:hover {
+    background-color: greenyellow;
+  }
+}
+
+
+.transition-example-hover--2 {
+  background-color: red;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+  @include transition(all 0.5s ease-out);
+
+  &:hover {
+    background-color: greenyellow;
+    padding: 20px;
+  }
+}
+
+.transition-example-hover--3 {
+  background-color: red;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+  @include transition(background 0.2s ease-out, padding 0.8s linear);
+
+  &:hover {
+    background-color: greenyellow;
+    padding: 20px;
+  }
+}
+
+.transition-example-hover--4 {
+  background-color: red;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+
+  &:hover {
+    background-color: greenyellow;
+    padding: 20px;
+    @include transition(all 0.5s ease-out);
+  }
 }

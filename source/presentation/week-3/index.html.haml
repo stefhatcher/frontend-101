@@ -1,0 +1,680 @@
+---
+title: "Frontend 101 - Week 3"
+
+description: "Positioning, Responsive-ness & Transitions"
+---
+
+%section
+  %h1 Frontend 101
+  %h2
+    Week 3
+    %hr
+    #{data.weeks[2].focus}
+
+  %p.align--bottom w/ Stefanie Hatcher
+
+%section
+  %section
+    %h1 Sizing &amp; Positioning
+
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.w3schools.com/cssref/pr_class_position.asp"  target="_blank" )
+        %code position
+
+    %h3
+      %a( href="http://www.w3schools.com/css/css_positioning.asp" target="_blank" )
+        Examples
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          /* fixed header. always at the top. */
+          #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+          }
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th value
+          %th description
+        %tr
+          %td( rowspan="4" )
+            %code position
+          %td
+            %code static
+          %td default position
+        %tr
+          %td
+            %code relative
+          %td offset from its normal static position
+        %tr
+          %td
+            %code absolute
+          %td
+            a fixed position
+            %em within its containing element
+        %tr
+          %td
+            %code fixed
+          %td
+            a fixed position
+            %em within the browser window
+        %tr
+          %td
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_pos_top.asp" target="_blank" )
+                %code top
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_pos_bottom.asp" target="_blank" )
+                %code bottom
+            = succeed ", " do
+              %a( href="http://www.w3schools.com/cssref/pr_pos_left.asp" target="_blank" )
+                %code left
+            %a( href="http://www.w3schools.com/cssref/pr_pos_right.asp" target="_blank" )
+              %code right
+          %td( colspan="2" ) positions of box's corners
+
+  %section
+    %h2 Absolute positioning
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          #menubar {
+            position: absolute;
+            top: 50px;
+            left: 400px;
+          }
+
+    %p
+      %img.example.right( src="#{ asset_path('png', 'images/absolute-position.png') }" alt="example of a menu-bar positioned absolutely" )
+      Removed from normal flow (like floating elements).
+
+    %p
+      Positioned relative to the block element containing them (assuming that block also uses
+      %code absolute
+      or
+      %code relative
+      positioning).
+
+    %p
+      Acutal position determined by
+      = succeed ", " do
+        %code top
+      = succeed ", " do
+        %code bottom
+      = succeed ", " do
+        %code left
+      %code right
+      values.
+
+    %p
+      Should often specify a
+      %code width
+      property as well.
+
+  %section
+    %h2 Relative positioning
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          #area2 {
+            position: relative;
+          }
+
+    %p
+      %img.example.right( src="#{ asset_path('png', 'images/relative-position.png') }" alt="example of a menu-bar positioned absolutely within a relative element" )
+      Absolute-positioned elements are normally positioned at an offset from the corder of the overall web page.
+
+    %p
+      Instead, to cause the absolute element to position itself relative to some other element's corner, wrap the
+      %code absolute
+      element in an element whose
+      %code position
+      is
+      = succeed "." do
+        %code relative
+
+  %section
+    %h2 Fixed positioning
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          #menubar {
+            position: fixed;
+          }
+
+
+    %p
+      %img.example.right( src="#{ asset_path('png', 'images/fixed-position.png') }" alt="example of a menu-bar position fixed" )
+      Removed from normal flow (like floating elements).
+
+    %p
+      Positioned relative to the browser window, even when the user scrolls the window, the element will remain in the same place.
+
+%section
+  %section
+    %h1 Alignment? Float? Position?
+
+    %ol
+      %li
+        If possible, lay out an eleent by
+        %em aligning
+        its content
+        %ul
+          %li
+            Horizontal alignment:
+            %code text-align
+            %br
+            Set this on a block element; it aligns the content within it (not the block element itself)
+          %li
+            Vertical alignment (trickier):
+            %code vertical-align
+            %br
+            Set this on an inline element, and it aligns it vertically within its containing element. Doesn't always work like you'd think (or hope) it would.
+            %a( href="http://css-tricks.com/centering-in-the-unknown/" target="_blank") There are tricks...
+        %li
+          If alignment won't work, try
+          %em floating
+          the element
+        %li
+          If floating won't work, try
+          %em positioning
+          the element.
+          %br
+          %strong
+            Advice:
+            = succeed "/" do
+              %code absolute
+            %code fixed
+            positioning are a last resort and should not be overused.
+
+  %section
+    %h2
+      CSS:
+      %a( href="http://www.w3schools.com/cssref/pr_pos_vertical-align.asp" target="_blank" )
+        %code vertical-align
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %code vertical-align
+          %td specifies where an inline element should be aligned vertically, with respect to other content on the same line within its block element's box
+
+    %p
+      Can be:
+      = succeed ", " do
+        %code top
+      = succeed ", " do
+        %code middle
+      = succeed ", " do
+        %code bottom
+      = succeed " (default), " do
+        %code baseline
+      = succeed ", " do
+        %code sub
+      = succeed ", " do
+        %code super
+      = succeed ", " do
+        %code text-top
+      = succeed ", " do
+        %code text-bottom
+      or a length value or
+      %code %
+
+    %p
+      %code baseline
+      means aligned with bottom of non-hanging letters.
+
+  %section
+    %h2
+      %code vertical-align
+      example
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p style="background-color: navy;">
+            Cupcakes are delicious.
+            <span style="vertical-align: super; font-size: x-small;">1</span>
+          </p>
+
+    %p( style="background-color: navy;" )
+      Cupcakes are delicious
+      %span( style="vertical-align: super; font-size: x-small;" ) 1
+
+  %section
+    %h2
+      Common bug:
+      %br
+      space under an image
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <p style="background-color: red; padding: 0; margin: 0;">
+           <img src="http://placekitten.comg/100/100" alt="kitten">
+          </p>
+
+    %p( style="background-color: red; padding: 0; margin: 0;" )
+      %img.example( src="http://placekitten.com/100/100" alt="kitten" )
+
+    %br
+
+    %p
+      Red space under the image, despite having
+      %code padding
+      and
+      %code margin
+      set to 0.
+
+    %p This is because the image is vertically aligned to the baseline of the paragraph by default (not the same as the bottom).
+
+    %p
+      Setting
+      %code vertical-align
+      to
+      %code bottom
+      fixed the problem.
+
+%section
+  %section
+    %h1 Ah-ha's about inline boxes
+
+    %p
+      Size properties
+      (
+      = succeed ", " do
+        %code width
+      = succeed ", " do
+        %code height
+      = succeed ", " do
+        %code min-width
+      etc.) are ignored for inline boxes.
+
+    %p
+      %code margin-top
+      and
+      %code margin-bottom
+      are ignored, but
+      %code margin-left
+      and
+      %code margin-right
+      are not.
+
+    %p
+      The containing block box's
+      %code text-align
+      property controls horizontal position of inline boxes within it. It does not align block boxes within the page.
+
+    %p
+      Each inline box's
+      %code vertical-align
+      property aligns it vertically within its block box.
+
+  %section
+    %h2
+      CSS:
+      %a( href="" target="_blank" )
+        %code display
+
+    %table
+      %tbody
+        %tr
+          %th property
+          %th description
+        %tr
+          %td
+            %code display
+          %td sets the type of CSS box model an element is displayed with
+
+    %p
+      Values:
+      = succeed ", " do
+        %code none
+      = succeed ", " do
+        %code inline
+      = succeed ", " do
+        %code inline-block
+      = succeed ", " do
+        %code block
+      = succeed ", " do
+        %code run-in
+      = succeed "..." do
+        %code compact
+
+    %p Use sparingly, because it can radically alter the page layout.
+
+  %section
+    %h2 Displaying block elements as&nbsp;inline
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <ul id="nav">
+            <li>nav item 1</li>
+            <li>nav item 2</li>
+            <li>nav item 3</li>
+          </ul>
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          #nav li {
+            display: inline;
+            border: 2px solid red;
+            margin-left: 1em;
+          }
+          #nav li:first-child {  margin-left: 0; }
+
+    .example.text--left
+      %ul( style="margin: 0;" )
+        %li( style="display: inline; border: 2px solid red; margin-left: 0;" ) nav item 1
+        %li( style="display: inline; border: 2px solid red; margin-left: 1em;" ) nav item 2
+        %li( style="display: inline; border: 2px solid red; margin-left: 1em;" ) nav item 3
+
+    %br
+
+    %p
+      Lists and other block elements can be displayed inline. Flows left-to-right on the same line. Width is determined by content (block elements are 100% of page width by default).
+
+  / http://courses.cs.washington.edu/courses/cse190m/12sp/extra.shtml#session1
+
+%section
+  %section
+    %h1 The Basics of Responsive-ness
+
+  %section
+    %h2 Step 1: Viewport
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          &lt;head&gt;
+            &lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,target-densitydpi=160"&gt;
+          &lt;/head&gt;
+
+    %p Most mobile browsers scale HTML pages to a wide viewport width so it fits on the screen. With the viewport meta tag, you can reset this behavior. The viewport tag tell the browser to use the device width as the viewport width and super locks in the scale (all the initial, min, max, scalable no business).
+
+  %section
+    %h2 Step 2: HTML Structure
+
+    %p When it comes to multi-column layouts on desktop, generally, the columns are collapsed to full width or the columns are reduced to a different layout for tablet.
+
+    %p Structure your HTML in a way that makes sense for it to collapse on mobile. A mobile-first approach would be to layout the content at full width and build up to multi-columns as the width increases, especially as breakpoints make sense for the content.
+
+    %p
+      %a( href="http://hicksdesign.co.uk/" target="_blank" ) Demo
+      %ul
+        %li
+          %strong Large size:
+          3 columns + sidebar
+        %li
+          %strong Smaller:
+          2 columns + sidebar (the middle column drops to the left column)
+        %li
+          %strong Even smaller:
+          1 column + sidebar (the right column shifts up below the logo)
+        %li
+          %strong Smallest:
+          no sidebar (logo &amp; right column shift up and the other sidebar columns move below)
+
+
+
+  %section
+    %h2 Step 3: Media Queries
+
+    %p
+      Using CSS3
+      %a( href="http://www.w3schools.com/css/css_mediatypes.asp" target="_blank" ) media
+      queries, styles can be changed under specified conditions. It is like writing if conditions to tell the browser how to render the page for specified viewport width (
+      %em width=device-width
+      ).
+
+    %p You can write as many media queries as you like. The purpose is to apply different CSS rules to achieve different layouts for specified viewport width. The media queries can be in the same stylesheet or in a separate file.
+
+  %section
+    %h2
+      More CSS3 Media Queries:
+      %br
+      %code max-width
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          @media screen and (max-width: 600px) {
+            #header {
+              background: red;
+            }
+          }
+
+    %p
+      %code #header
+      will get a red background if/when the viewing area is smaller than 600px.
+
+    %p
+      You can link a separate stylesheet if the viewing area is smaller than 600px by adding a
+      %code media
+      attribute to a
+      %code &lt;link&gt;
+      in the
+      = succeed "." do
+        %code &lt;head&gt;
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          <link rel="stylesheet" media="screen and (max-width: 600px)" href="style.css">
+
+  %section
+    %h2
+      More CSS3 Media Queries:
+      %br
+      %code min-width
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          @media screen and (min-width: 900px) {
+            #header {
+              background: yellow;
+            }
+          }
+
+    %p
+      %code #header
+      will get a yellow background if/when the viewing area is greater than 900px.
+
+  %section
+    %h2
+      More CSS3 Media Queries:
+      %br
+      Multiple
+
+
+    %pre
+      %code.css( data-trim="" )
+        :preserve
+          @media screen and (min-width: 600px) and (max-width: 900px) {
+            #header {
+              background: magenta;
+            }
+          }
+
+    %p
+      %code #header
+      will get a megenta background if/when the viewing area is between 600px and 900px.
+
+  %section
+    %h2 Keep in mind...
+
+    %p Having an optimized stylesheet for mobile devices doesn't mean your site is optimized for mobile. To be truly optimized for mobile devices, your images and markups need to be cut on the load size as well (responsive image loading is a whole other thing).
+
+    %p Media queries are meant for design presentation, not optimization.
+
+    %p
+      %a( href="http://webdesignerwall.com/tutorials/css3-media-queries" target="_blank" ) A handy source.
+
+%section
+  %section
+    %h1
+      %a( href="http://www.w3schools.com/cssref/css3_pr_transition.asp" target="_blank" )
+        %code transition
+
+    %p
+      The
+      %code transition
+      property is a shorthand property use to represent up to four transition-related longhand properties:
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          .example {
+            transition: [transition-property]
+                        [transition-duration]
+                        [transition-timing-function]
+                        [transition-delay];
+          }
+
+    %p
+      These properties allow elements to change values over a specified duration, animating the property changes, rather than having them occur immediately. Here's a list of
+      = succeed "." do
+        %a( href="http://www.w3.org/TR/css3-transitions/#animatable-properties" target="_blank" ) which properties are animatable
+
+    %p Overall, the order of the values does not matter, unless a delay is specified. If you specify a delay, you must first specify a duration.
+
+    %p
+      Examples from
+      = succeed "." do
+        %a( href="http://css-tricks.com/almanac/properties/t/transition/" target="_blank" ) CSS-Tricks
+
+  %section
+    %h1 Example 1
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          div {
+            background-color: red;
+            transition: background-color 0.5s ease-out;
+          }
+
+          div:hover {
+            background-color: greenyellow;
+          }
+
+    .transition-example-hover--1
+
+    %hr
+
+    %p
+      The background color of a
+      %code &lt;div&gt;
+      element on
+      %code :hover
+
+    %p The div will take half a second when the mouse is over it to turn from red to greenyellow.
+
+
+  %section
+    %h1 Example 2
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          div {
+            background-color: red;
+            padding: 10px;
+            transition: all 0.5s ease-out;
+          }
+
+          div:hover {
+            background-color: greenyellow;
+            padding: 20px;
+          }
+
+    .transition-example-hover--2
+
+    %hr
+
+    %p
+      You can specify a particular property (like the previous example) or use a value of "all" to refer to transition properties.
+
+
+  %section
+    %h1 Example 3
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          div {
+            background-color: red;
+            padding: 10px;
+            transition: background 0.2s ease-out,
+                        padding 0.8s linear;
+          }
+
+          div:hover {
+            background-color: greenyellow;
+            padding: 20px;
+          }
+
+    .transition-example-hover--3
+
+    %hr
+
+    %p
+      To setup multiple transitions, you can comma separate value sets to do different transitions on different properties.
+
+
+  %section
+    %h1 Notes
+
+    %p
+      By specifying the transition on the element itself, you define the transition to occur in both directions. When the styles are changed (on hover on), the properties will transition, and when the styles change back (on hover off) they will transition again.
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          div {
+            background-color: red;
+          }
+
+          div:hover {
+            background-color: greenyellow;
+            transition: background-color 0.5s ease-out;
+          }
+
+    .transition-example-hover--4( style="float: left; margin-right: 20px;" )
+
+
+    %p The transition has been moved to the hover state selector and there is no matching transition on the selector that targets the element directly without the hover state.
+
+
+  %section
+    %h1 Cross Browser Compatibility
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          .example {
+            -webkit-transition: background-color 500ms ease-out 1s;
+            -moz-transition: background-color 500ms ease-out 1s;
+            -o-transition: background-color 500ms ease-out 1s;
+            transition: background-color 500ms ease-out 1s;
+          }
+
+    %h2 Vendor prefixes!!!
