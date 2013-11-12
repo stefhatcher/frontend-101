@@ -1,0 +1,91 @@
+---
+title: "Frontend 101 - Week 4"
+
+description: "Responsive workshop: making a layout responsive. Live coding!"
+---
+
+%section
+  %h1 Frontend 101
+  %h2
+    Week 3
+    %hr
+    #{data.weeks[3].focus}
+
+  %p.align--bottom w/ Stefanie Hatcher
+
+%section
+  %h1 Getting Ready
+
+  %ol
+    %li
+      Make a new folder on your desktop named "responsive-example"
+
+    %li
+      Download this
+      %a( href="responsive-example/index.html" target="_blank" )
+        %code index.html
+      to your "responsive-example" folder.
+
+    %li
+      Download this
+      %a( href="responsive-example/base.css" target="_blank" )
+        %code base.css
+      to your "responsive-example" folder.
+
+    %li
+      Open up these files in SublimeText2.
+
+    %li
+      Create a new file within the folder named:
+      %code layout.css
+
+    %li
+      Let's take a moment to see what we're working with, paying attention to the classes and sections already provided.
+
+%section
+  %h1 The large, desktop view should look like:
+
+%section(  data-background="#{ asset_path('png', 'images/solution-large-view.png') }" data-background-repeat="no-repeat" data-background-size="auto 100%" data-background-transition="slide" )
+
+%section
+  %h1 The small, mobile view should look like:
+
+%section(  data-background="#{ asset_path('png', 'images/solution-small-top.png') }" data-background-repeat="no-repeat" data-background-size="auto 100%" data-background-transition="slide" )
+
+%section(  data-background="#{ asset_path('png', 'images/solution-small-bottom.png') }" data-background-repeat="no-repeat" data-background-size="auto 100%" data-background-transition="slide" )
+
+%section
+  %h1
+    Let's
+    %code class
+    it up!
+
+  %p Rows, columns, hidden, shown, centered, x-out-of-12-columns... oh my!
+  %p
+    Here's a list of classes used in the solution (in no particular order):
+  %ul.display--block
+    %li
+      %code show-for-small
+    %li
+      %code hide-for-small
+    %li
+      %code text-center
+    %li
+      %code large-12 large-8 large-6 large-4 large-3
+    %li
+      %code small-12 small-6
+    %li
+      %code row
+    %li
+      %code columns
+
+%section
+  %h1 Start styling
+
+  %p The small, mobile view will be any device width under 768px. Anything above will be considered the large view.
+
+  %p The max width of the grid will have a 100% width with a max width of 1024px.
+
+  %p There are two header images: one for the large view (hidden in small view) and one for the small view (hidden in large view).
+
+  %p For a mobile-first development strategy, we'll style the smaller view first. Then we'll add any necessary styles to reflow the layout to the larger view.

@@ -1,0 +1,355 @@
+---
+title: "Frontend 101 - Week 5"
+
+description: "Intro to Javascript... Oh, no."
+---
+
+%section
+  %h1 Frontend 101
+  %h2
+    Week 5
+    %hr
+    #{data.weeks[4].focus}
+
+  %p.align--bottom w/ Stefanie Hatcher
+
+%section
+  %section
+    %h1 Key JavaScript Concepts
+
+  %section
+    %h1 Client-side scripting
+
+    %p.text--center
+      %img.example( src="#{ asset_path("png", "images/client-side-scripting.png") }" width="75%" )
+
+    %p
+      = succeed ":" do
+        %strong client-side script
+      code runs the in browser
+      %em after
+      the page is sent back from a web server. Often, this code manipulates the page or responds to user actions.
+
+  %section
+    %h1 Why client-side programming?
+
+    %h5.text--left Client-side scripting (JavaScript) benefits:
+    %ul.text--left.width--100
+      %li
+        = succeed ":" do
+          %strong usability
+        can modify a page without having to post back to the server (faster UI)
+      %li
+        = succeed ":" do
+          %strong efficiency
+        can make small, quick changes to page without waiting for server
+      %li
+        = succeed ":" do
+          %strong event-driven
+        can respond to user actions like clicks and key presses
+
+    %hr.hr--spacious
+
+    %h5.text--left Server-sdie programming (PHP, Python, Clojure, Ruby) benefits:
+    %ul.text--left.width--100
+      %li
+        = succeed ":" do
+          %strong security
+        has access to server's private data; client can't see source code
+      %li
+        = succeed ":" do
+          %strong compatibility
+        not subject to browser compatibility issues
+      %li
+        = succeed ":" do
+          %strong power
+        can write files, open connections to servers, conntect to databases ...
+
+  %section
+    %h1 What is JavaScript?
+
+    %p It's a lightweight programming language; a "scripting language."
+
+    %p It's used to make web pages interactive:
+    %ul.text--left.width--100
+      %li insert dynamic text into HTML (ex: placeholder text in form elements; user name)
+      %li react to events (ex: page load, user click, user scroll)
+      %li get information about a user's computer (ex: browser type; device type)
+      %li perform calculations on user's computer (ex: form validation; countdown clock)
+
+    %hr.hr--spacious
+
+    %p
+      It's a
+      %a( href="http://www.webstandards.org/" target="_blank") web standard
+      (but not supported identically by
+      = succeed ", " do
+        %a( href="http://en.wikipedia.org/wiki/Criticisms_of_Internet_Explorer#JavaScript_and_DOM" target="_blank") all browsers).
+
+    %p
+      Definitely NOT related to a thing you may have heard on the streets called "Java."
+      %br
+      Not related other than partially shared name and some syntactic similarities.
+
+  %section
+    %h1
+      JavaScript vs Java
+      %br
+      %small (for now, just know Java !== JavaScript)
+
+    %p
+      JavaScript is
+      = succeed ", " do
+        %strong interpreted
+      not compiled like Java.
+
+    %p JavaScript is contained within a web page and integrates with its HTML/CSS content.
+
+    %p JavaScript has more relaxed syntax and rules.
+    %ul.text--left.width--100
+      %li Fewer and "looser" data types.
+      %li Variables don't need to be declared.
+      %li Errors: often fails silently (few exceptions are thrown)
+
+  %section
+    %h1 More about JavaScript (JS)
+
+    %p
+      JS is object-oriented like:
+      %code noun.verb();
+      and less procedural:
+      %code verb(noun);
+
+    %p JS focuses on UIs and interacting with a document.
+
+    %p JS code runs on the client's browser. Server side runs on the web server.
+
+  %section
+    %h1 Hooking up JavaScript
+
+    %p Including an external file (much like linking a stylesheet):
+    %pre
+      %code.html( data-trim="" )
+        :preserve
+          &lt;head&gt;
+            &lt;script src="/javascript/site.js" type="text/javascript"&gt;&lt;/script&gt;
+          &lt;/head&gt;
+    %hr
+
+    %p
+      The
+      %code type="text/javascript"
+      attribute and value are not required in HTML5 (optional).
+
+    %p
+      The
+      %code src
+      attribute contains a value with a relative or absolute path to a javascript file.
+
+  %section
+    %h1 Embedding JavaScript
+
+    %p
+      Much like embedding styles in the
+      = succeed ", " do
+        %code head
+      you can embed JavaScript
+      %br
+      (but it's super NOT recommended for large chunks of code).
+
+    %pre
+      %code( data-trim="" )
+        :preserve
+          &lt;head&gt;
+            &lt;script&gt;
+              var message = "Hello, world!";
+              alert(message);
+            &lt;/script&gt;
+          &lt;/head&gt;
+
+    %hr
+
+    %p
+      The
+      %code src
+      attribute is not included.
+
+    %p
+      The
+      %code type="text/javascript"
+      attribute and value are not required in HTML5 (optional). Above is an example without the attribute.
+
+%section
+  %section
+    %h1 JavaScript Syntax
+
+  %section#alert
+    %h1
+      A JavaScript statement:
+      %a( href="http://www.w3schools.com/js/js_popup.asp"  target="_blank" )
+        %code alert
+
+    %pre
+      %code.javascript( data-trim="" )
+        :preserve
+          alert("Hello, world!");
+
+    %button.button--large( onclick='alert("Hello, world!");' ) Run JS!
+
+    %hr.hr--spacious
+
+    %p
+      A JS command that pops up a dialog box with a given message wrapped in quotes (this makes a
+      = succeed ")." do
+        %code String
+
+  %section#variables
+    %h1
+      %a( href="http://www.w3schools.com/js/js_variables.asp" target="_blank" ) Variables
+      and types
+
+    %pre
+      %code.javascript( data-trim="" )
+        :preserve
+          var age = 27; // number: integer (whole) or decimal.
+          var fullName = "Stefanie Hatcher"; // string: needs quotes around text
+          var isDead = false; // boolean: true or false
+
+    %p
+      Variables are declared with the
+      %code var
+      keyword (case sensitive) and end with
+      %br
+      a semi-colon.
+    %p
+      Types are not specified, but JS does have more formal types ("loosely typed"):
+      %ul
+        %li
+          = succeed ", " do
+            %code Number
+          = succeed ", " do
+            %code Boolean
+          = succeed ", " do
+            %code String
+          = succeed ", " do
+            %code Array
+          = succeed ", " do
+            %code Object
+          = succeed ", " do
+            %code Function
+          = succeed ", " do
+            %code Null
+          %code Undefined
+        %li
+          can find out a variable's type by calling
+          %a( href="http://javascript.crockford.com/remedial.html" target="_blank" )
+            %code typeof
+
+  %section
+    %h1
+      %code Number
+      type
+
+    %pre
+      %code.javascript( data-trim="" )
+        :preserve
+          var enrollment = 99;
+          var medianGrade = 2.8;
+          var credits = 5 + 4 + (2 * 3);
+
+    %hr
+
+    %p
+      Integers and real numbers (decimals) are the same type (no
+      %code int
+      vs
+      %code double
+      that some languages differentiate
+      ).
+
+    %p Math operators:
+
+    %table
+      %tbody
+        %tr
+          %th operator
+          %th description
+        %tr
+          %td
+            %code + - * /
+          %td
+            add, subtract, multiply, divide numbers
+        %tr
+          %td
+            %code %
+          %td
+            %a( href="http://en.wikipedia.org/wiki/Modulo_operation" target="_blank" ) modulus
+            (mod) finds the remainder of division of one number by another.
+        %tr
+          %td
+            %code ++
+          %td
+            increments the number by 1. For example:
+            %code enrollment++;
+            would update
+            %code enrollment
+            to equal 100 instead of 99.
+        %tr
+          %td
+            %code --
+          %td
+            decrements the number by 1. For example:
+            %code enrollment--;
+            would update
+            %code enrollment
+            to equal 98 instead of 99.
+
+    %p
+      %a( href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank") A complete decent list of JavaScript operators and operator precedance.
+
+  %section
+    %h1
+      %a( href="http://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank" )
+        %code String
+      type
+
+    %pre
+      %code.javascript( data-trim="" )
+        :preserve
+          var name = "Connie Client";
+          var firstName = name.substring(0, name.indexOf(" "));  // "Connie"
+          var len = name.length;  // 13
+          var name2 = 'Melvin Merchant';  // can use single or double quotes
+
+    %p
+      A string has methods that you can call to get information about the string or to manipulate it (method names are case-sensitive):
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_charAt.asp" target="_blank" )
+          %code charAt
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_charCodeAt.asp" target="_blank" )
+          %code charCodeAt
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_fromCharCode.asp" target="_blank" )
+          %code fromCharCode
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_indexOf.asp" target="_blank" )
+          %code indexOf
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_lastIndexOf.asp" target="_blank" )
+          %code lastIndexOf
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_replace.asp" target="_blank" )
+          %code replace
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_split.asp" target="_blank" )
+          %code split
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_substring.asp" target="_blank" )
+          %code substring
+      = succeed ", " do
+        %a( href="http://www.w3schools.com/jsref/jsref_toLowerCase.asp" target="_blank" )
+          %code toLowerCase
+      %a( href="http://www.w3schools.com/jsref/jsref_toUpperCase.asp" target="_blank" )
+        %code toUpperCase
+

@@ -6,28 +6,29 @@ title: Welcome to Frontend 101
   .content
     %h1 Welcome to Frontend 101!
 
-%section#presentations
-  .content
-    %h2 Presentations:
-    %ol
-      - data.weeks.each do |week|
-        - if week.visible
-          %li
-            %a( href="presentation/#{week.slug}/" ) #{week.title} - #{week.focus}
+%section.section--bottom-divider
+  .row
+    .column.column--1-of-2
+      %h2 Presentations:
+      %ol.no-list-type
+        - data.weeks.each do |week|
+          - if week.visible
+            %li
+              %a( href="presentation/#{week.slug}/" ) #{week.title} - #{week.focus}
 
-%section#homeworks
-  .content
-    %h2 Homeworks:
-    %ol
-      - data.homework.each do |homework|
-        - if homework.visible
-          %li
-            %a( href="homework/#{homework.slug}/" ) #{homework.title}
+    .column.column--1-of-2
+      %h2 Homeworks:
+      %ol.no-list-type
+        - data.homework.each do |homework|
+          - if homework.visible
+            %li
+              %a( href="homework/#{homework.slug}/" ) #{homework.title}
 
-%section#resources
-  .content
-    %h2 Resources:
-    %ul
-      - data.resources.each do |resource|
-        %li
-          %a( href="#{resource.link}" target="_blank" ) #{resource.title}
+%section
+  .row
+    .column.column--1-1
+      %h2 Resources:
+      %ul.no-list-type
+        - data.resources.each do |resource|
+          %li
+            %a( href="#{resource.link}" target="_blank" ) #{resource.title}

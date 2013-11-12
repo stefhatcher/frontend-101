@@ -1,6 +1,8 @@
 @import "compass";
 @import "_grid";
+@import "_fonts";
 
+$experimental-support-for-svg: true;
 $footer-height: 0;
 
 %clearfix {
@@ -18,18 +20,21 @@ $footer-height: 0;
   zoom: 1;
 }
 
+*, *:after, *:before {
+  @include box-sizing(border-box);
+}
+
 html, body {
   height: 100%;
 }
 
 body {
   color: #555;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'roboto_slabthin';
   line-height: 1.667;
 }
 
 #main {
-  background: transparent image-url("bg.png") repeat 0 0;
   min-height: 100%;
   margin-bottom: -$footer-height;
 }
@@ -49,7 +54,6 @@ body {
 
 section {
   @extend %clearfix;
-  border-bottom: 1px solid #dadada;
   padding: 40px 20px;
 
   &:last-child {
@@ -63,6 +67,10 @@ section {
   }
 }
 
+.section--bottom-divider {
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .homework_week-1 {
   img {
     display: block;
@@ -71,13 +79,32 @@ section {
 }
 
 #intro {
+  background: transparent url(http://placekitten.com/g/1000/800) no-repeat 50% 50%;
+  @include background-size(cover);
+  height: 400px;
+  width: 100%;
+  @include transition(all 190ms ease-out);
+
+  @media (screen and max-width: $phone-break) {
+    height: 200px;
+  }
+
+  .content {
+    display: table;
+    height: 100%;
+  }
+
   h1 {
+    color: #fff;
+    display: table-cell;
+    font-weight: 300;
     margin: 0;
-    text-align: center;
+    vertical-align: middle;
   }
 }
 
 a {
+  background: transparent;
   color: #976EA7;
   text-decoration: none;
 
@@ -89,12 +116,18 @@ a {
 
 h1, h2, h3 {
   color: #272727;
+  font-family: 'roboto_slabregular';
   font-weight: 400;
   line-height: 1;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 p {
@@ -104,6 +137,7 @@ p {
 }
 
 ol, ul {
+  padding: 0;
   margin: 1em 0 0;
 
   li {
@@ -111,6 +145,21 @@ ol, ul {
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+.no-list-type {
+  @include no-bullets;
+}
+
+.screenshot {
+  a {
+    display: block;
+
+    img {
+      display: inline-block;
+      vertical-align: bottom;
     }
   }
 }

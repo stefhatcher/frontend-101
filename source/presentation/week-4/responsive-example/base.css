@@ -1,0 +1,230 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+}
+
+/**
+ * Global styles.
+ */
+a {
+  color: #2ba6cb;
+  text-decoration: none;
+  line-height: inherit;
+  -webkit-transition: color 190ms ease-out;
+  -moz-transition: color 190ms ease-out;
+  -o-transition: color 190ms ease-out;
+  transition: color 190ms ease-out;
+}
+a:hover {
+  color: #2284a1;
+}
+
+body {
+  background: white;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+}
+
+hr {
+  border: solid #dddddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1.25em;
+  text-rendering: optimizeLegibility;
+}
+
+/**
+ * Typography
+ */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 2.75em;
+}
+
+h2 {
+  font-size: 2.3125em;
+}
+
+h3 {
+  font-size: 1.6875em;
+}
+
+h4 {
+  font-size: 1.4375em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+.subheader {
+  line-height: 1.4;
+  color: #6f6f6f;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+/**
+ * Utility Styles
+ */
+/* Horizontal list / Inline list */
+.inline-list {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 0 1.0625em -1.375em;
+}
+.inline-list li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.inline-list li:first-child, .inline-list li.first {
+  padding-left: 0;
+}
+.inline-list li:last-child {
+  padding-right: 0;
+}
+.inline-list li.last {
+  padding-right: 0;
+}
+
+.radius {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* Float left */
+.left {
+  float: left !important;
+}
+
+/* Float right */
+.right {
+  float: right !important;
+}
+
+/* Text center */
+.text-center {
+  text-align: center;
+}
+
+/* Text left */
+.text-left {
+  text-align: left;
+}
+
+/* Text right */
+.text-right {
+  text-align: right;
+}
+
+/**
+ * CTA
+ */
+.cta {
+  background-color: #2ba6cb;
+  border: 1px solid #2284a1;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 190ms ease-out;
+  -moz-transition: background-color 190ms ease-out;
+  -o-transition: background-color 190ms ease-out;
+  transition: background-color 190ms ease-out;
+}
+.cta, .cta:hover {
+  color: white;
+}
+.cta:hover {
+  background-color: #2284a1;
+}
+.cta.large {
+  padding-top: 1.03125em;
+  padding-right: 2em;
+  padding-bottom: 1.03125em;
+  padding-left: 2em;
+  font-size: 1.25em;
+}
+.cta.expand {
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 100%;
+}
+.cta.small {
+  padding-top: 0.625em;
+  padding-right: 1.125em;
+  padding-bottom: 0.5625em;
+  padding-left: 1.125em;
+  font-size: 0.8125em;
+}
+
+/**
+ * Panel Styles.
+ */
+.panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d9d9d9;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f2f2f2;
+}
+.panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+.panel h1.subheader, .panel h2.subheader, .panel h3.subheader, .panel h4.subheader, .panel h5.subheader, .panel h6.subheader {
+  line-height: 1.4;
+}
+.panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
+  color: #333333;
+}

@@ -1,0 +1,133 @@
+@import "compass";
+
+$large-min: 768px;
+$large-max: 1440px;
+$num-columns: 12;
+$max-width: 1024px;
+$gutter: 10px;
+
+
+/**
+ * Grid: Row
+ */
+
+ /* Row */
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: $max-width;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  /* Nested Row */
+  .row {
+    width: auto;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+}
+
+/* Column and Columns */
+.column,
+.columns {
+  position: relative;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  width: 100%;
+  float: left;
+}
+
+/**
+ * Default, Mobile styles.
+ */
+@media only screen {
+  .column,
+  .columns {
+    position: relative;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    float: left;
+  }
+
+  @for $i from 1 through $num-columns {
+    .small-#{$i} {
+      position: relative;
+      width: ($i / $num-columns) * 100%;
+    }
+  }
+
+  .small-full {
+    width: 100%;
+  }
+
+  [class*="column"] + [class*="column"]:last-child {
+    float: right;
+  }
+}
+
+/**
+ * Large View.
+ * Styles for screens that are at least 768px;
+ */
+@media only screen and (min-width: $large-min) {
+  @for $i from 1 through $num-columns {
+    .large-#{$i} {
+      position: relative;
+      width: ($i / $num-columns) * 100%;
+    }
+  }
+}
+
+/**
+ * Visibility Utility
+ */
+
+/* Hidden by default */
+.hide-for-small {
+  display: none !important;
+}
+
+/* Inherit parent's display property value to show */
+.show-for-small {
+  display: inherit !important;
+}
+
+/**
+ * Large view.
+ * Styles for screens that are at least 768px;
+ */
+@media only screen and (min-width: $large-min) {
+  /* Inherit parent's display property value to show */
+  .hide-for-small {
+    display: inherit !important;
+  }
+
+  /* Hide show for small in large view */
+  .show-for-small {
+    display: none !important;
+  }
+}

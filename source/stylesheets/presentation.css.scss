@@ -108,6 +108,15 @@
     }
   }
 
+  h1 small {
+    font-size: xx-large;
+    font-weight: 400;
+  }
+
+  .hr--spacious {
+    margin: 2em 0;
+  }
+
   ul.text--smaller {
     font-size: smaller;
   }
@@ -232,6 +241,15 @@
   p.error {
     background-color: red;
   }
+
+  .width--100 {
+    width: 100%;
+  }
+
+  .button--large {
+    font-size: xx-large;
+    padding: 0.6em 0.5em;
+  }
 }
 
 
@@ -264,6 +282,22 @@
 
   &:after {
     content: 'CSS';
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+
+    .xml &,
+    .html & {
+      content: '';
+    }
+  }
+}
+
+.javascript {
+  position: relative;
+
+  &:after {
+    content: 'JavaScript';
     position: absolute;
     right: 10px;
     bottom: 5px;

@@ -1,0 +1,32 @@
+%section
+  .row
+    .column.column--1-of-1
+      %h1
+        Finish the
+        = succeed "." do
+          %a( href="../../presentation/week-4/" ) Responsive Workshop
+
+%section
+  .row
+    .column.column--1-of-1
+      %h2 Large view:
+
+      .screenshot
+        %a( href="#{ asset_path('png', 'images/solution-large-view.png') }" target="_blank" )
+          %img( src="#{ asset_path('png', 'images/solution-large-view.png') }" )
+
+%section
+  .row
+    .column.column--6-of-12
+      %h2 Top of the small view:
+
+      .screenshot
+        %a( href="#{ asset_path('png', 'images/solution-small-top.png') }" target="_blank" )
+          %img( src="#{ asset_path('png', 'images/solution-small-top.png') }" )
+
+    .column.column--6-of-12
+      %h2 Bottom of the small view:
+
+      .screenshot
+        %a( href="#{ asset_path('png', 'images/solution-small-bottom.png') }" target="_blank" )
+          %img( src="#{ asset_path('png', 'images/solution-small-bottom.png') }" )

@@ -20,7 +20,6 @@ end
 # With alternative layout
 page "/presentations/index.html", :layout => :layout
 
-# FALSE FOR WEEK ONE
 page "homework/week-2/blog.html", :layout => false
 
 #
@@ -32,6 +31,11 @@ page "homework/week-2/blog.html", :layout => false
 with_layout :presentation do
   page "/presentation/week-*"
 end
+
+page "/presentation/week-4/responsive-example/index.html", :layout => false
+page "/presentation/week-4/responsive-example/solution.html", :layout => false
+page "/presentation/week-4/responsive-example/solution.css", :layout => false
+page "/presentation/week-4/responsive-example/base.css", :layout => false
 
 # Proxy pages (http://middlemanapp.com/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
